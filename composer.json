@@ -1,0 +1,40 @@
+{
+    "name": "unionco/geolocation",
+    "description": "Geolocation helper for Craft",
+    "type": "craft-plugin",
+    "version": "0.0.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "geolocation"
+    ],
+    "support": {
+        "docs": "https://github.com/abryrath/geolocation/blob/master/README.md",
+        "issues": "https://github.com/abryrath/geolocation/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abry Rath <abry.rath@union.co>",
+            "homepage": "https://github.com/abryrath"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "unionco\\geolocation\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Geolocation",
+        "handle": "geolocation",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/abryrath/geolocation/master/CHANGELOG.md",
+        "class": "unionco\\geolocation\\Geolocation"
+    }
+}
