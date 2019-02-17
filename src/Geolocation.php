@@ -10,14 +10,15 @@
 
 namespace unionco\geolocation;
 
-use unionco\geolocation\models\Settings;
-
 use Craft;
+
+use yii\base\Event;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 
-use yii\base\Event;
+use unionco\geolocation\models\Settings;
+use unionco\geolocation\elements\ZipLatLng;
 
 /**
  * Class Geolocation
@@ -56,11 +57,20 @@ class Geolocation extends Plugin
         parent::init();
         self::$plugin = $this;
 
+        // echo ZipLatLng::find()->zip('19807')->getRawSql();
+        // die;
+
+        $this->setComponents([
+            'install' => \unionco\geolocation\services\Install::class,
+        ]);
+
         Event::on(
             Plugins::class,
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
+                    // self::$plugin->install->migrate();
+                    self::$plugin->install->seed();
                 }
             }
         );
