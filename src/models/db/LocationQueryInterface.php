@@ -28,5 +28,5 @@ interface LocationQueryInterface
     /**
      * @return LocationQueryInterface
      */
-    public function limit(int $limit);
+    public function limit($limit);
 }
