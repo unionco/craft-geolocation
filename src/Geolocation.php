@@ -11,15 +11,12 @@
 namespace unionco\geolocation;
 
 use Craft;
-
-use yii\base\Event;
 use craft\base\Plugin;
-use craft\services\Plugins;
 use craft\events\PluginEvent;
-
+use craft\services\Plugins;
 use unionco\geolocation\models\Settings;
-use unionco\geolocation\elements\ZipLatLng;
 use unionco\geolocation\twigextensions\GeolocationTwigExtension;
+use yii\base\Event;
 
 /**
  * Class Geolocation
@@ -36,7 +33,6 @@ class Geolocation extends Plugin
 
     /**
      * @var Geolocation
-     * @psalm-suppress 
      */
     public static $plugin;
 
@@ -107,7 +103,7 @@ class Geolocation extends Plugin
         return Craft::$app->view->renderTemplate(
             'geolocation/settings',
             [
-                'settings' => $this->getSettings()
+                'settings' => $this->getSettings(),
             ]
         );
     }

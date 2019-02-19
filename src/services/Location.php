@@ -2,12 +2,9 @@
 
 namespace unionco\geolocation\services;
 
-use Craft;
 use craft\base\Component;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\models\ZipLatLng;
-use unionco\geolocation\Geolocation as Plugin;
-use unionco\geolocation\models\LocationSearchResult;
 
 class Location extends Component
 {
@@ -19,16 +16,16 @@ class Location extends Component
     public function distance(LatLng $start, LatLng $end): float
     {
         $theta = $start->lng - $end->lng;
-        
+
         $dist = sin(deg2rad($start->lat))
-            * sin(deg2rad($end->lat))
-            + cos(deg2rad($start->lat)) 
-            * cos(deg2rad($end->lat)) 
-            * cos(deg2rad($theta));
-            
+         * sin(deg2rad($end->lat))
+         + cos(deg2rad($start->lat))
+         * cos(deg2rad($end->lat))
+         * cos(deg2rad($theta));
+
         $dist = acos($dist);
         $dist = rad2deg($dist);
-        
+
         $miles = $dist * 60 * 1.1515;
 
         return $miles;
