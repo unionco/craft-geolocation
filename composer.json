@@ -22,7 +22,7 @@
     ],
     "require": {
         "craftcms/cms": "^3.0.0-RC1",
-        "league/csv": "^8",
+        "league/csv": "*",
         "guzzlehttp/guzzle": "^6.3"
     },
     "autoload": {

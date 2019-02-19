@@ -36,6 +36,7 @@ class Geolocation extends Plugin
 
     /**
      * @var Geolocation
+     * @psalm-suppress 
      */
     public static $plugin;
 
@@ -64,6 +65,7 @@ class Geolocation extends Plugin
         $this->setComponents([
             'install' => \unionco\geolocation\services\Install::class,
             'geolocation' => \unionco\geolocation\services\Geolocation::class,
+            'location' => \unionco\geolocation\services\Location::class,
         ]);
 
         Event::on(

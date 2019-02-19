@@ -2,15 +2,16 @@
 
 namespace unionco\geolocation\models\db;
 
-use unionco\geolocation\models\db\LocationQueryInterface;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\models\UnioncoGooglePlace;
 use unionco\geolocation\traits\LocationQueryTrait;
+use unionco\geolocation\models\db\AbstractLocationQuery;
 use unionco\googleservices\records\GoogleServicesRecord;
+use unionco\geolocation\models\db\LocationQueryInterface;
 
 class UnioncoGooglePlaceQuery extends AbstractLocationQuery implements LocationQueryInterface
 {
-    use LocationQueryTrait;
+    //use LocationQueryTrait;
 
     protected $_recordClass = GoogleServicesRecord::class;
     /**
