@@ -28,7 +28,7 @@ class Settings extends Model
     /**
      * @var string
      */
-    public $someAttribute = 'Some Default';
+    public $ipStackApiKey = '';
 
     // Public Methods
     // =========================================================================
@@ -39,8 +39,8 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            ['ipStackApiKey', 'string'],
+            ['ipStackApiKey', 'default', 'value' => ''],
         ];
     }
 }

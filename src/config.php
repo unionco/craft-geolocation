@@ -25,6 +25,6 @@
 return [
 
     // This controls blah blah blah
-    "someAttribute" => true,
+    "ipStackApiKey" => getenv('IPSTACK_API_KEY'),
 
 ];

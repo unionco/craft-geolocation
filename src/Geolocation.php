@@ -19,6 +19,7 @@ use craft\events\PluginEvent;
 
 use unionco\geolocation\models\Settings;
 use unionco\geolocation\elements\ZipLatLng;
+use unionco\geolocation\twigextensions\GeolocationTwigExtension;
 
 /**
  * Class Geolocation
@@ -51,17 +52,18 @@ class Geolocation extends Plugin
 
     /**
      * @inheritdoc
+     * @return void
      */
     public function init()
     {
         parent::init();
         self::$plugin = $this;
 
-        // echo ZipLatLng::find()->zip('19807')->getRawSql();
-        // die;
+        Craft::$app->view->registerTwigExtension(new GeolocationTwigExtension());
 
         $this->setComponents([
             'install' => \unionco\geolocation\services\Install::class,
+            'geolocation' => \unionco\geolocation\services\Geolocation::class,
         ]);
 
         Event::on(
@@ -69,7 +71,6 @@ class Geolocation extends Plugin
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
-                    // self::$plugin->install->migrate();
                     self::$plugin->install->seed();
                 }
             }
