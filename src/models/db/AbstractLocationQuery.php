@@ -29,8 +29,6 @@ abstract class AbstractLocationQuery extends ActiveQuery implements LocationQuer
         $reflectClass = new \ReflectionClass($this->className());
 
         return ($reflectClass->newInstanceArgs([$this->getRecordClass()]))
-        //
-        //return (new self($this->getRecordClass()))
             ->select('*')
             ->from(['d' => $this])
             ->where(['<', 'd.distance', $range]);

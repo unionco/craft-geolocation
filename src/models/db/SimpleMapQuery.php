@@ -6,12 +6,9 @@ use ether\simplemap\records\MapRecord;
 use unionco\geolocation\models\db\AbstractLocationQuery;
 use unionco\geolocation\models\db\LocationQueryInterface;
 use unionco\geolocation\models\LatLng;
-use unionco\geolocation\traits\LocationQueryTrait;
 
 class SimpleMapQuery extends AbstractLocationQuery implements LocationQueryInterface
 {
-    use LocationQueryTrait;
-
     protected $_recordClass = MapRecord::class;
 
     /**
