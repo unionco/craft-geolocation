@@ -34,7 +34,19 @@ Configuration is set through the Craft CP. It is recommended to set API keys or 
 
 ## Using Geolocation
 
--Insert text here-
+Geolocation providers return a `LatLng` object. To get the `LatLng` object from twig:
+```
+{% set latLng = geolocation.geolocation.getCoords() %}
+```
+or from PHP:
+```
+<?php
+use \unionco\geolocation\models\LatLng;
+use \unionco\geolocation\GeolocationPlugin;
+
+/** @var LatLng $location **/
+$location = GeolocationPlugin::$plugin->geolocation->getCoords();
+```
 
 ## Creating Your Own Provider
 
@@ -129,4 +141,4 @@ Some things to do, and ideas for potential features:
 
 * Release it
 
-Brought to you by [Abry Rath <abry.rath@union.co>](https://github.com/abryrath)
+Brought to you by [UNION](https://github.com/unionco)
