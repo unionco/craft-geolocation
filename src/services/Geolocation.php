@@ -107,4 +107,21 @@ class Geolocation extends Component
     {
         return $this->providers;
     }
+
+    public function getProviderOptions(): array
+    {
+        return array_map(
+            /**
+             * @param array $provider
+             * @return array
+             */
+            function ($provider) {
+                return [
+                    'value' => $provider['handle'],
+                    'label' => $provider['name'],
+                ];
+            },
+            $this->getProviders()
+        );
+    }
 }
