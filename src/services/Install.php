@@ -16,26 +16,27 @@ class Install extends Component
 
     public function seed()
     {
-        $filePath = __DIR__ . '/../../resources/zip.csv';
+        // $filePath = __DIR__ . '/../../resources/zip.csv';
 
-        $csvReader = Reader::createFromPath($filePath, 'r');
+        // $csvReader = Reader::createFromPath($filePath, 'r');
 
-        foreach ($csvReader as $record) {
-            $zip = (string) $record[0];
-            $lat = (float) $record[1];
-            $lng = (float) $record[2];
+        // foreach ($csvReader as $record) {
+        //     $zip = (string) $record[0];
+        //     $lat = (float) $record[1];
+        //     $lng = (float) $record[2];
 
-            if (ZipLatLng::find()->zipcode($zip)->count()) {
-                continue;
-            }
+        //     if (ZipLatLng::find()->zipcode($zip)->count()) {
+        //         continue;
+        //     }
 
-            $zipLatLng = new ZipLatLng([
-                'zip' => $zip,
-                'lat' => $lat,
-                'lng' => $lng,
-            ]);
+        //     $zipLatLng = new ZipLatLng([
+        //         'zip' => $zip,
+        //         'lat' => $lat,
+        //         'lng' => $lng,
+        //     ]);
 
-            $zipLatLng->save();
-        }
+        //     $zipLatLng->save();
+        // }
+        return true;
     }
 }

@@ -1,0 +1,15 @@
+{% import "_includes/forms" as forms %}
+
+<h3>IPStack</h3>
+
+{{ forms.autosuggestField({
+    label: 'Access Key',
+    id: 'ipstack-accessKey',
+    name: 'providerSettings[ipstack][accessKey]',
+    suggestEnvVars: true,
+    size: 30,
+    required: true,
+    suggestAliases: true,
+    instructions: 'Use an environment variable to store your Access Key and select it here',
+    value: settings.providerSettings['ipstack']['accessKey'] ?? ''
+})}}

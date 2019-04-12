@@ -26,13 +26,13 @@ use yii\base\Event;
  * @since     0.0.1
  *
  */
-class Geolocation extends Plugin
+class GeolocationPlugin extends Plugin
 {
     // Static Properties
     // =========================================================================
 
     /**
-     * @var Geolocation
+     * @var GeolocationPlugin
      */
     public static $plugin;
 
@@ -67,9 +67,13 @@ class Geolocation extends Plugin
         Event::on(
             Plugins::class,
             Plugins::EVENT_AFTER_INSTALL_PLUGIN,
+            /**
+             * @param PluginEvent $event
+             * @return void
+             */
             function (PluginEvent $event) {
                 if ($event->plugin === $this) {
-                    self::$plugin->install->seed();
+                    // self::$plugin->install->seed();
                 }
             }
         );
@@ -92,6 +96,7 @@ class Geolocation extends Plugin
      */
     protected function createSettingsModel()
     {
+        // $providers = self::$plugin->geolocation->getProviders();
         return new Settings();
     }
 

@@ -1,0 +1,20 @@
+{% import "_includes/forms" as forms %}
+
+{% set providers = geolocation.geolocation.getProviders() %}
+{# {{ dump(settings) }} #}
+<div data-provider-select data-providers="{{ providers | json_encode }}" class="ProviderSelect">
+    {{ forms.selectField({
+        label: 'Provider',
+        id: 'providerSelect',
+        name: 'provider',
+        selected: settings['provider'],
+        options: settings['providers']
+        })
+    }}
+
+    {% for provider in geolocation.geolocation.getProviders() %}
+        <div data-provider="{{ provider.handle }}" class="Provider">
+            {{ provider.instance.settingsHtml() | raw }}
+        </div>
+    {% endfor %}
+</div>

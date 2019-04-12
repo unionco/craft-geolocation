@@ -1,0 +1,13 @@
+{% import "_includes/forms" as forms %}
+<h3>Google Maps</h3>
+
+{{ forms.autosuggestField({
+    label: 'API Key',
+    id: 'googlemaps-apiKey',
+    name: 'providerSettings[googlemaps][apiKey]',
+    suggestEnvVars: true,
+    size: 30,
+    required: true,
+    instructions: 'Use an environment variable to store your API key and select it here',
+    value: settings.providerSettings['googlemaps']['apiKey'] ?? ''
+}) }}

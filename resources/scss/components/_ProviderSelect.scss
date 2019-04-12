@@ -1,0 +1,9 @@
+.ProviderSelect {
+    .Provider {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

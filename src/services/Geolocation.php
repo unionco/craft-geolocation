@@ -6,82 +6,105 @@ use Craft;
 use craft\base\Component;
 use GuzzleHttp\Client as HttpClient;
 use unionco\geolocation\models\LatLng;
+use unionco\geolocation\GeolocationPlugin;
+use unionco\geolocation\services\IPStackProvider;
+use unionco\geolocation\services\GoogleMapsProvider;
+use unionco\geolocation\events\RegisterProvidersEvent;
+use unionco\geolocation\interfaces\GeolocationProvider;
 
 class Geolocation extends Component
 {
-    /** @var \GuzzleHttp\Client */
-    public static $client;
+    // Constants
+    // =========================================================================
+
+    /**
+     * @event RegisterProvidersEvent The event that is raised when registering geolocation providers
+     *
+     * ```php
+     * use unionco\geolocation\events\RegisterProvidersEvent;
+     * use unioncp\geolocation\services\Geolocation;
+     * use yii\base\Event;
+     *
+     * Event::on(
+     *      Geolocation::class, Addresses::EVENT_BEFORE_SAVE_ADDRESS, function(AddressEvent $e) {
+     *     // Do something - perhaps let an external CRM system know about a client's new address
+     * });
+     * ```
+     */
+    const EVENT_REGISTER_PROVIDERS = 'registerProviders';
+
+    /**
+     * @var \GuzzleHttp\Client $client
+     */
+    public $client;
+
+    /**
+     * @var GeolocationProvider[] $providers
+     */
+    private $providers;
  
-    /** @var float */
-    const DEFAULT_LAT = 35.3183;
+    /**
+     * @var GeolocationProvider
+     */
+    private $provider;
 
-    /** @var float */
-    const DEFAULT_LNG = -80.7476;
-
-    /** @var string */
-    const DEFAULT_LOCATION_JSON = '{"latitude": 35.3183, "longitude": -80.7476}';
-    
-    // Logging messages
-    /** @var string */
-    const WARN_IPSTACK_RESP = ' Error processing IPStack response. Using default location.';
-
-    /** @var string */
-    const INFO_LOCALHOST = ' Remote IP == 127.0.0.1 -> Using default location.';
-
-    public function __construct()
+    /**
+     * @return void
+     */
+    public function init()
     {
-        if (!self::$client) {
-            self::$client = new HttpClient([
-                'base_uri' => 'http://api.ipstack.com',
-            ]);
+        $providers = [
+            IPStackProvider::class,
+            GoogleMapsProvider::class,
+        ];
+
+        // Raise the registerProviders event
+        $event = new RegisterProvidersEvent([
+            'providers' => $providers,
+        ]);
+
+        $this->trigger(
+            self::EVENT_REGISTER_PROVIDERS,
+            $event
+        );
+
+        foreach ($event->providers as $provider) {
+            if (\class_exists($provider)) {
+                $this->providers[$provider::handle()] = [
+                    'handle' => $provider::handle(),
+                    'name' => $provider::name(),
+                    // 'description' => $provider::description(),
+                    'instance' => new $provider,
+                ];
+            }
         }
     }
 
     /**
-     * Get LatLng coordinates from the IPStack API. Returns the default
-     * location coordinates if the API call fails
-     * @psalm-suppress InvalidNullableReturnType
      * @return LatLng
      */
-    public function getCoords(): LatLng
+    public function getCoords($ipAddress = null): LatLng
     {
-        $ip = Craft::$app->request->getRemoteIp();
-        if ($ip == '127.0.0.1') {
-            //$ip = '173.95.57.226';
-            Craft::info(__METHOD__ . self::INFO_LOCALHOST);
+        $provider = $this->getProvider();
+        
+        return $provider->getCoords($ipAddress);
+    }
 
-            /** @var LatLng */
-            $latLng = LatLng::make(self::DEFAULT_LOCATION_JSON);
-            
-            return $latLng;
+    public function getProvider(): GeolocationProvider
+    {
+        if (!$this->provider) {
+            $providerHandle = GeolocationPlugin::$plugin->getSettings()->provider;
+            if (\key_exists($providerHandle, $this->providers)) {
+                $this->provider = $this->providers[$providerHandle]['instance'];
+                return $this->provider;
+            }
+            /** @todo **/
         }
+        return $this->provider;
+    }
 
-        $opts = [
-            'query' => [
-                'access_key' => getenv('IPSTACK_API_KEY'),
-                'fields' => 'latitude,longitude',
-            ],
-        ];
-
-        try {
-            $response = self::$client->request('GET', $ip, $opts);
-
-            $responseBody = $response
-                ->getBody()
-                ->getContents();
-
-            /** @var \unionco\geolocation\models\LatLng */
-            $latLng = LatLng::make($responseBody); // ?? new LatLng(self::DEFAULT_LAT, self::DEFAULT_LNG);
-            
-            return $latLng;
-        } catch (\Exception $e) {
-            Craft::warning(__METHOD__ . self::WARN_IPSTACK_RESP);
-            Craft::warning(__METHOD__ . $e->getMessage());
-            
-            /** @var \unionco\geolocation\models\LatLng */
-            $latLng = LatLng::make(self::DEFAULT_LOCATION_JSON);
-            
-            return $latLng;
-        }
+    public function getProviders(): array
+    {
+        return $this->providers;
     }
 }

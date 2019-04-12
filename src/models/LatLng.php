@@ -2,6 +2,8 @@
 
 namespace unionco\geolocation\models;
 
+use craft\helpers\Json;
+
 class LatLng
 {
     /** @var float */
@@ -26,9 +28,9 @@ class LatLng
      * @param string $json
      * @return LatLng
      */
-    public static function make(string $json): ?LatLng
+    public static function makeFromJson(string $json): ?LatLng
     {
-        $data = json_decode($json);
+        $data = Json::decode($json, false);
         $lat = (float)$data->latitude;
         $lng = (float)$data->longitude;
 

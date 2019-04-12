@@ -13,14 +13,6 @@
  */
 #}
 
-{% import "_includes/forms" as forms %}
+{% do view.registerAssetBundle("unionco\\geolocation\\assetbundles\\geolocation\\GeolocationAdminAsset") %}
 
-{% do view.registerAssetBundle("unionco\\geolocation\\assetbundles\\geolocation\\GeolocationAsset") %}
-
-{{ forms.textField({
-    label: 'IP Stack API Key',
-    instructions: 'https://ipstack.com',
-    id: 'ipstack-api-key',
-    name: 'ipstack-api-key',
-    value: settings['ipStackApiKey']})
-}}
+{% include "geolocation/_components/providerSelect" %}

@@ -14,6 +14,7 @@ use unionco\geolocation\Geolocation;
 
 use Craft;
 use craft\base\Model;
+use unionco\geolocation\GeolocationPlugin;
 
 /**
  * @author    Abry Rath <abry.rath@union.co>
@@ -24,11 +25,17 @@ class Settings extends Model
 {
     // Public Properties
     // =========================================================================
+    /**
+     * @var array
+     */
+    public $providers;
 
     /**
      * @var string
      */
-    public $ipStackApiKey = '';
+    public $provider;
+
+    public $providerSettings = [];
 
     // Public Methods
     // =========================================================================
@@ -38,9 +45,20 @@ class Settings extends Model
      */
     public function rules()
     {
-        return [
-            ['ipStackApiKey', 'string'],
-            ['ipStackApiKey', 'default', 'value' => ''],
+        $rules = [
+            // ['providers', 'array'],
+            // ['providers', 'default', 'value' => 'ipstack'],
+            ['provider', 'string'],
+            ['provider', 'default', 'value' => 'ipstack'],
         ];
+
+        // $providerSettings = [];
+        // foreach (GeolocationPlugin::$plugin->geolocation->getProviders() as $provider) {
+        //     $rules = $provider['instance']::rules();
+        //     $providerSettings[$provider['handle']] = $rules;
+        // }
+        // $rules[] = ['providerSettings'] = $providerSettings;
+
+        return $rules;
     }
 }
