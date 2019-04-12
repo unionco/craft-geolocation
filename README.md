@@ -105,6 +105,10 @@ See the existing providers (`IPStackProvider` and `GoogleMapsProvider`) for more
 In your module or plugin, create an Event listener, like so:
 
 ```
+<?php
+
+// ...
+
 use yii\base\Event;
 use yii\base\Module;
 use unionco\app\services\MyProvider;
@@ -112,7 +116,7 @@ use unionco\geolocation\services\Geolocation;
 use unionco\geolocation\events\RegisterProvidersEvent;
 
 class MyModule extends Module 
-    // ..
+    // ...
 
     /**
      * @return void
