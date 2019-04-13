@@ -48,18 +48,34 @@ use \unionco\geolocation\GeolocationPlugin;
 $location = GeolocationPlugin::$plugin->geolocation->getCoords();
 ```
 
+To calculate the distance between two `LatLng` objects, use the `Location` service:
+
+```
+{% miles = geolocation.location.distance(latLng1, latLng2) %}
+```
+or 
+```
+<?php
+
+use unionco\geolocation\GeolocationPlugin;
+
+// ...
+$miles = GeolocationPlugin::$plugin->location->distance($latLng1, $latLng2);
+
+```
+
 ## Creating Your Own Provider
 
-Providers must implement the `unionco\geolocation\interfaces\GeolocationProvider` interface. An abstract base class is provided as `unionco\geolocation\services\AbstractProvider`. See the following code for an example to get started:
+Providers must implement the `unionco\geolocation\interfaces\GeolocationProvider` interface. An abstract base class is provided as `unionco\geolocation\providers\AbstractProvider`. See the following code for an example to get started:
 
 ```
 <?php
 
-namespace unionco\app\services;
+namespace unionco\app\providers;
 
 use unionco\geolocation\models\LatLng;
 use Psr\Http\Message\ResponseInterface;
-use unionco\geolocation\services\AbstractProvider;
+use unionco\geolocation\providers\AbstractProvider;
 
 class MyProvider extends AbstractProvider
 {
@@ -111,8 +127,8 @@ In your module or plugin, create an Event listener, like so:
 
 use yii\base\Event;
 use yii\base\Module;
-use unionco\app\services\MyProvider;
-use unionco\geolocation\services\Geolocation;
+use unionco\app\providers\MyProvider;
+use unionco\geolocation\providers\Geolocation;
 use unionco\geolocation\events\RegisterProvidersEvent;
 
 class MyModule extends Module 
@@ -143,6 +159,8 @@ If your provider was setup correctly, you should now see it in the Geolocation s
 
 Some things to do, and ideas for potential features:
 
+* Location distances in alternate units
+* Geocoding interface
 * Release it
 
 Brought to you by [UNION](https://github.com/unionco)

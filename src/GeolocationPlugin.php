@@ -11,12 +11,14 @@
 namespace unionco\geolocation;
 
 use Craft;
-use craft\base\Plugin;
-use craft\events\PluginEvent;
-use craft\services\Plugins;
-use unionco\geolocation\models\Settings;
-use unionco\geolocation\twigextensions\GeolocationTwigExtension;
 use yii\base\Event;
+use craft\base\Plugin;
+use craft\services\Plugins;
+use craft\events\PluginEvent;
+use unionco\geolocation\models\Settings;
+use unionco\geolocation\services\Location;
+use unionco\geolocation\services\Geolocation;
+use unionco\geolocation\twigextensions\GeolocationTwigExtension;
 
 /**
  * Class Geolocation
@@ -59,9 +61,8 @@ class GeolocationPlugin extends Plugin
         Craft::$app->view->registerTwigExtension(new GeolocationTwigExtension());
 
         $this->setComponents([
-            'install' => \unionco\geolocation\services\Install::class,
-            'geolocation' => \unionco\geolocation\services\Geolocation::class,
-            'location' => \unionco\geolocation\services\Location::class,
+            'geolocation' => Geolocation::class,
+            'location' => Location::class,
         ]);
 
         Event::on(

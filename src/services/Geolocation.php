@@ -7,8 +7,8 @@ use craft\base\Component;
 use GuzzleHttp\Client as HttpClient;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\GeolocationPlugin;
-use unionco\geolocation\services\IPStackProvider;
-use unionco\geolocation\services\GoogleMapsProvider;
+use unionco\geolocation\providers\IPStackProvider;
+use unionco\geolocation\providers\GoogleMapsProvider;
 use unionco\geolocation\events\RegisterProvidersEvent;
 use unionco\geolocation\interfaces\GeolocationProvider;
 

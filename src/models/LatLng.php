@@ -23,23 +23,6 @@ class LatLng
     }
 
     /**
-     * Create and return a LatLng object based on the
-     * JSON response from IPStack
-     * @param string $json
-     * @return LatLng
-     */
-    public static function makeFromJson(string $json): ?LatLng
-    {
-        $data = Json::decode($json, false);
-        $lat = (float)$data->latitude;
-        $lng = (float)$data->longitude;
-
-        $latLng = new LatLng($lat, $lng);
-        
-        return $latLng;
-    }
-
-    /**
      * @param mixed $lat
      * @return null
      */

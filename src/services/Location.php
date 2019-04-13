@@ -30,15 +30,4 @@ class Location extends Component
 
         return $miles;
     }
-
-    /**
-     * @param string $zipcode
-     * @return null|LatLng
-     */
-    public function getLatLngByZipcode(string $zipcode)
-    {
-        return ZipLatLng::find()
-            ->zipcode($zipcode)
-            ->asLatLng();
-    }
 }

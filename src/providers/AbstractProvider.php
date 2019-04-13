@@ -1,6 +1,6 @@
 <?php
 
-namespace unionco\geolocation\services;
+namespace unionco\geolocation\providers;
 
 use Craft;
 use GuzzleHttp\Client;
@@ -80,7 +80,7 @@ abstract class AbstractProvider implements GeolocationProvider
     public function getCoords($ipAddress = null): LatLng
     {
         $ip = $this->getIpAddress($ipAddress);
-        $apiResponse = $this->getRequest();
+        $apiResponse = $this->getRequest($ip);
         $responseBody = $apiResponse
             ->getBody()
             ->getContents();

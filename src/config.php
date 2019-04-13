@@ -22,9 +22,4 @@
  * you do for 'general.php'
  */
 
-return [
-
-    // This controls blah blah blah
-    "ipStackApiKey" => getenv('IPSTACK_API_KEY'),
-
-];
+return [];
