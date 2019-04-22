@@ -1,0 +1,580 @@
+dateModified: 1549226511
+email:
+  fromEmail: abry.rath@union.com
+  fromName: Sandbox
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  819e28be-a3bd-410f-b2a1-121ab26a19aa:
+    name: Common
+fields:
+  0ddcaf33-4f8d-4bd9-9ba4-a506a2ab2e06:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: textComponents
+    instructions: ''
+    name: 'Text Components'
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      someAttribute: 'Some Default'
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  0f00ec4b-25ba-451d-8a88-52f08be8dfdd:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: textComponent
+    instructions: ''
+    name: 'Text Component'
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      sections:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      targetSiteId: null
+      types:
+        - ixKGZ7Pe6YiJQEHea-tn4Ak0_lsx8PlM8_Iu2lIReHQwUTde_TBMV5t9m_D6zn10fo9oJBBchoAAG0SfpD2e_7fr9dLKrF2F0pwRphB1aZDqJ9uKWGMBMmhHjdpmAPtqgTnWiOM6Y7EMSxFAzxp22C7YyOCF3lUtc1Tr3nQKf5cmnCsvYfLGE-fD2tpaHRgVXTjGecKkDT4z_HgrvZCRQB46a0iVMtFNtwBNz0EVU_Oe9qK4HGfBl2wKZfgYgKCXveNb7larMcYZh7vPLidr4NMn3AL864S7-CIk6yWlXqdtXtMPYIS8Gp-0YIwRcigiB2dbFbQBFBTnTanEzP8bQxi6DRQnaOC2ZCl9qsIL-suA3sGz8p4_sbCkd58jF1Gg2RLo720HNgJQI73sVjPLU7YN5-vQDFqHbhMkGqpVQ7UdqaqFsJAbFDQwgfMgWwvScPBtYTexpUOx9Oy2EVQpTR5E9wXmlnQaAs9cXtrH4w4qdhk94BycN-9jeqcJTAKV-86WiV0V9dAASVyXN-3259q1HN0GxX2qfLHfjRZdDIk=
+        - fields/save-field
+        - '5eaef42fdefa81c108f6ce91d03acff22d23b48fb5ba6162418497d45aeb4c96settings/fields/{groupId}'
+        - '7'
+        - '1'
+        - 'Text Component'
+        - textComponent
+        - ''
+        - '1'
+        - unionco\relatedentrytypes\fields\EntryType
+        -
+          craft\fields\Assets:
+            defaultUploadLocationSubpath: ''
+            limit: ''
+            restrictFiles: ''
+            selectionLabel: ''
+            singleUploadLocationSubpath: ''
+            useSingleFolder: ''
+            viewMode: list
+          craft\fields\Categories:
+            branchLimit: ''
+            selectionLabel: ''
+          craft\fields\Checkboxes:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Color:
+            defaultColor: ''
+          craft\fields\Date:
+            dateTime: showDate
+            minuteIncrement: '30'
+          craft\fields\Dropdown:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Email:
+            placeholder: ''
+          craft\fields\Entries:
+            limit: ''
+            selectionLabel: ''
+            sources: '*'
+          craft\fields\Lightswitch:
+            default: ''
+          craft\fields\Matrix:
+            maxBlocks: ''
+            minBlocks: ''
+          craft\fields\MultiSelect:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Number:
+            decimals: '0'
+            defaultValue: ''
+            max: ''
+            min: '0'
+            size: ''
+          craft\fields\PlainText:
+            charLimit: ''
+            code: ''
+            columnType: text
+            initialRows: '4'
+            multiline: ''
+            placeholder: ''
+          craft\fields\RadioButtons:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Table:
+            addRowLabel: 'Add a row'
+            columnType: text
+            columns:
+              col1:
+                handle: ''
+                heading: ''
+                type: singleline
+                width: ''
+            defaults:
+              row1:
+                col1: ''
+            maxRows: ''
+            minRows: ''
+          craft\fields\Tags:
+            selectionLabel: ''
+          craft\fields\Url:
+            placeholder: ''
+          craft\fields\Users:
+            limit: ''
+            selectionLabel: ''
+            sources: '*'
+          unionco\relatedentrytypes\fields\EntryType:
+            limit: ''
+            selectionLabel: ''
+            sources:
+              - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+            types:
+              - '4'
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  1c050887-7a27-44e1-8ffa-1737f42d6dc3:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: regularEntries
+    instructions: ''
+    name: 'Regular Entries'
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  3a701e1a-6a8d-4359-bbcb-998cecc722dc:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: test
+    instructions: ''
+    name: Test
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  87841f01-fa01-426a-9a03-797ff2548f62:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: testText
+    instructions: ''
+    name: 'Test Text'
+    searchable: true
+    settings:
+      entryTypes: null
+      limit: ''
+      localizeRelations: false
+      sections: null
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  ab15a65c-a4fe-49f6-a7c3-bd7e0c0f1999:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: testText
+    instructions: ''
+    name: 'Test Text'
+    searchable: true
+    settings:
+      entryTypes:
+        - '4'
+        - '2'
+      limit: ''
+      localizeRelations: false
+      sections:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+        - 'section:145e4344-e34f-4aae-b48e-066daed49f55'
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+        - 'section:145e4344-e34f-4aae-b48e-066daed49f55'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  bc7ae24f-d704-4340-9248-54d798114435:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: test
+    instructions: ''
+    name: Test
+    searchable: true
+    settings:
+      limit: ''
+      localizeRelations: false
+      sections:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+        - 'section:145e4344-e34f-4aae-b48e-066daed49f55'
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+        - 'section:145e4344-e34f-4aae-b48e-066daed49f55'
+      targetSiteId: null
+      types:
+        - 3lh0z7N8BLt-kKP0qQyee4jDSQFnrXlYOLmcYWd0A6gFPdIGZdK4GLaXFU9JpWgzZCa5VfUjH0N5TL3RlnNBx55S5c2d5APhgBzxrCuXJ30Sy0uP8Vh22pUo7px0LXNRibC1sw2rXpQkJD_prD5Jz9xJlxPnegYnoH5CyKAhMwzQzxL5-vRdUvMrhd9YF6WtDAXB_lmILt2yHk2ssZ4ySr7xjUmUrKd0z2WjL3nu2V2a5_LNKLiCWGkVkf3Raqn-Htt85faRg2hdT2KyBE1ll4ZtLqr8SWmID_LGwedCpzzsqWRVNtk8DlT_0jckF1P-Mgu-TSzj4FvKpyd7f5QOBAIT3GXCF3l1HX6E5PBFJfOpZ9GspdZh1eIkl5UY9R9NIf546sQ8QeqtTN6qRB5DaL6EhNA-nWeiRnwKs8lxfKLvOPV20jRIHucaKOX0cEdJhqNUt6y3PgKlHLOzE16U9U958IJ9ulf5gy1p2dbJQASKvf884YLqDpcGlEcxt4g7_9_G_GnKth8FVqiS_gf_jnmNO9am_88EOHkG8Dw3Av4=
+        - fields/save-field
+        - '5eaef42fdefa81c108f6ce91d03acff22d23b48fb5ba6162418497d45aeb4c96settings/fields/{groupId}'
+        - '1'
+        - Test
+        - test
+        - ''
+        - '1'
+        - unionco\relatedentrytypes\fields\EntryType
+        -
+          craft\fields\Assets:
+            defaultUploadLocationSubpath: ''
+            limit: ''
+            restrictFiles: ''
+            selectionLabel: ''
+            singleUploadLocationSubpath: ''
+            useSingleFolder: ''
+            viewMode: list
+          craft\fields\Categories:
+            branchLimit: ''
+            selectionLabel: ''
+          craft\fields\Checkboxes:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Color:
+            defaultColor: ''
+          craft\fields\Date:
+            dateTime: showDate
+            minuteIncrement: '30'
+          craft\fields\Dropdown:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Email:
+            placeholder: ''
+          craft\fields\Entries:
+            limit: ''
+            selectionLabel: ''
+            sources: '*'
+          craft\fields\Lightswitch:
+            default: ''
+          craft\fields\Matrix:
+            maxBlocks: ''
+            minBlocks: ''
+          craft\fields\MultiSelect:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Number:
+            decimals: '0'
+            defaultValue: ''
+            max: ''
+            min: '0'
+            size: ''
+          craft\fields\PlainText:
+            charLimit: ''
+            code: ''
+            columnType: text
+            initialRows: '4'
+            multiline: ''
+            placeholder: ''
+          craft\fields\RadioButtons:
+            options:
+              -
+                default: ''
+                label: ''
+                value: ''
+          craft\fields\Table:
+            addRowLabel: 'Add a row'
+            columnType: text
+            columns:
+              col1:
+                handle: ''
+                heading: ''
+                type: singleline
+                width: ''
+            defaults:
+              row1:
+                col1: ''
+            maxRows: ''
+            minRows: ''
+          craft\fields\Tags:
+            selectionLabel: ''
+          craft\fields\Url:
+            placeholder: ''
+          craft\fields\Users:
+            limit: ''
+            selectionLabel: ''
+            sources: '*'
+          unionco\relatedentrytypes\fields\EntryType:
+            limit: ''
+            selectionLabel: ''
+            sources:
+              - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+              - 'section:145e4344-e34f-4aae-b48e-066daed49f55'
+        -
+          - '4'
+          - '2'
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  c05ac67f-42c1-4bc7-817f-c5fb16e0ce23:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: imagesOnly
+    instructions: ''
+    name: 'Images only'
+    searchable: true
+    settings:
+      entryTypes:
+        -
+          entryTypes:
+            - '5'
+      limit: ''
+      localizeRelations: false
+      sections:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      targetSiteId: null
+      types:
+        unionco\relatedentrytypes\fields\EntryType:
+          entryTypes:
+            - '5'
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+  d707b038-4611-4e76-b978-7901c04de76d:
+    contentColumnType: string
+    fieldGroup: 819e28be-a3bd-410f-b2a1-121ab26a19aa
+    handle: test
+    instructions: ''
+    name: Test
+    searchable: true
+    settings:
+      entryTypes: ''
+      limit: ''
+      localizeRelations: false
+      sections: ''
+      selectionLabel: ''
+      source: null
+      sources:
+        - 'section:11821fb7-f25a-4d25-ba99-21a6cbaa3e66'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: unionco\relatedentrytypes\fields\EntryType
+plugins:
+  import:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
+    settings:
+      relationships: ''
+      runValidation: '1'
+  related-entry-types:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.1
+  sync-db:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+sections:
+  11821fb7-f25a-4d25-ba99-21a6cbaa3e66:
+    enableVersioning: true
+    entryTypes:
+      936020a9-5514-4d9e-bc82-22075c186179:
+        handle: text
+        hasTitleField: true
+        name: Text
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+      db53d45b-6247-425f-87af-a97498bb778d:
+        handle: image
+        hasTitleField: true
+        name: Image
+        sortOrder: 2
+        titleFormat: ''
+        titleLabel: Title
+    handle: components
+    name: Components
+    propagateEntries: true
+    siteSettings:
+      c9b0813b-4495-43ed-96c5-26b222608668:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'components/{slug}'
+    type: channel
+  145e4344-e34f-4aae-b48e-066daed49f55:
+    enableVersioning: true
+    entryTypes:
+      37e5ff97-4e0a-4d51-81e0-2977532bd969:
+        handle: blogPost
+        hasTitleField: true
+        name: 'Blog Post'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+      65804946-2220-414a-9061-cf26547f3341:
+        handle: pressRelease
+        hasTitleField: true
+        name: 'Press Release'
+        sortOrder: 3
+        titleFormat: ''
+        titleLabel: Title
+      e63efda8-b693-45f4-adf2-0383c8f35fea:
+        handle: newsArticle
+        hasTitleField: true
+        name: 'News Article'
+        sortOrder: 2
+        titleFormat: ''
+        titleLabel: Title
+    handle: media
+    name: Media
+    propagateEntries: true
+    siteSettings:
+      c9b0813b-4495-43ed-96c5-26b222608668:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'media/{slug}'
+    type: channel
+  2cd31ac6-f7af-4737-85ea-59c998f5eec5:
+    enableVersioning: true
+    entryTypes:
+      a90c5b48-0666-44c3-b7f5-bafdc6d14f64:
+        fieldLayouts:
+          cd060fe8-c8ae-44ef-b017-56cd2f719d87:
+            tabs:
+              -
+                fields:
+                  1c050887-7a27-44e1-8ffa-1737f42d6dc3:
+                    required: false
+                    sortOrder: 1
+                name: 'Tab 1'
+                sortOrder: 1
+        handle: about
+        hasTitleField: false
+        name: About
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: about
+    name: About
+    propagateEntries: true
+    siteSettings:
+      c9b0813b-4495-43ed-96c5-26b222608668:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: about
+    type: single
+  d708dd5d-e34d-408d-8e89-29244cda0677:
+    enableVersioning: true
+    entryTypes:
+      4c0aa714-8c85-4911-af1e-03877a98181e:
+        fieldLayouts:
+          ed8ef4c4-9529-482e-a67a-87562848b663:
+            tabs:
+              -
+                fields:
+                  3a701e1a-6a8d-4359-bbcb-998cecc722dc:
+                    required: false
+                    sortOrder: 1
+                name: Common
+                sortOrder: 1
+        handle: home
+        hasTitleField: false
+        name: Home
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: ''
+    handle: home
+    name: Home
+    propagateEntries: true
+    siteSettings:
+      c9b0813b-4495-43ed-96c5-26b222608668:
+        enabledByDefault: true
+        hasUrls: true
+        template: home/_entry
+        uriFormat: __home__
+    type: single
+siteGroups:
+  93e4749e-42d7-4a80-9be1-3fcc4fca9529:
+    name: Sandbox
+sites:
+  c9b0813b-4495-43ed-96c5-26b222608668:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: Sandbox
+    primary: true
+    siteGroup: 93e4749e-42d7-4a80-9be1-3fcc4fca9529
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: Sandbox
+  schemaVersion: 3.1.23
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

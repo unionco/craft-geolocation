@@ -1,0 +1,76 @@
+version: '2'
+services:
+  web:
+    # image: abryrath/craft
+    build: ./web
+    ports: 
+      - "8080:80"
+    networks:
+      main:
+        aliases:
+          - web
+    depends_on: 
+      - db
+      - selenium
+    # links:
+    #   - db
+      # - selenium
+    volumes:
+      - ./app:/var/www
+      - ../tests:/var/www/tests
+      - ../:/var/www/plugin
+      - ./app/web:/var/www/html
+      # - ./scripts:/root/scripts
+  
+  # test_runner:
+  #   image: abryrath/craft
+  #   networks:
+  #     main:
+  #       aliases:
+  #         - test_runner
+  #   depends_on: 
+  #     - web
+  #     - db
+  #     - selenium
+  #   # links:
+  #   #   - db
+  #     # - selenium
+  #   volumes:
+  #     - ./app:/var/www
+  #     - ../tests:/var/www/tests
+  #     - ../:/var/www/plugin
+  #     - ./app/web:/var/www/html
+  #   command: 'bash -c "sleep 5; cd /var/www && vendor/bin/codecept run"'
+
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      main:
+        aliases:
+          - db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: database
+    ports:
+      - "8889:3306"
+
+  selenium:
+    image: selenium/standalone-chrome
+    # links: 
+    #   - web
+    networks:
+      main:
+        aliases:
+          - selenium
+    volumes:
+      - /dev/shm:/dev/shm
+    ports:
+      - "4444:4444"
+
+networks:
+  main:

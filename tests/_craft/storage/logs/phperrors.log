@@ -1,0 +1,584 @@
+[14-Feb-2019 13:18:00 UTC] PHP Parse error:  syntax error, unexpected 'require' (T_REQUIRE), expecting ',' or ')' in /Users/abryrath/Union/Sites/autobell-com/tests/_craft/config/test.php on line 27
+[14-Feb-2019 13:18:24 UTC] PHP Parse error:  syntax error, unexpected ')' in /Users/abryrath/Union/Sites/autobell-com/tests/_craft/config/test.php on line 28
+[14-Feb-2019 14:02:01 UTC] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 14:02:01 UTC] PHP Stack trace:
+[14-Feb-2019 14:02:01 UTC] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 14:02:01 UTC] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 14:02:01 UTC] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 14:02:01 UTC] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 14:02:01 UTC] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 14:02:01 UTC] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 14:02:01 UTC] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 14:02:01 UTC] PHP   8. Codeception\Command\Run->runSuites($suites = *uninitialized*, $skippedSuites = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:390
+[14-Feb-2019 14:02:01 UTC] PHP   9. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:495
+[14-Feb-2019 14:02:01 UTC] PHP  10. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 14:02:01 UTC] PHP  11. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 14:02:01 UTC] PHP  12. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 14:02:01 UTC] PHP  13. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 14:02:01 UTC] PHP  14. GiftCartServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 14:02:01 UTC] PHP  15. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 14:02:01 UTC] PHP  16. GiftCartServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 14:02:01 UTC] PHP  17. GiftCartServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 14:02:01 UTC] PHP  18. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 14:02:01 UTC] PHP  19. GiftCartServiceTest->testGiftCardServiceExists() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 15:40:40 UTC] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 15:40:40 UTC] PHP Stack trace:
+[14-Feb-2019 15:40:40 UTC] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 15:40:40 UTC] PHP   2. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 15:40:40 UTC] PHP   3. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 10:57:25 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 10:57:25 America/New_York] PHP Stack trace:
+[14-Feb-2019 10:57:25 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 10:57:25 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 10:57:25 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 10:57:25 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 10:57:25 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 10:57:25 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 10:57:25 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 10:57:25 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[14-Feb-2019 10:57:25 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 10:57:25 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 10:57:25 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 10:57:25 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 10:57:25 America/New_York] PHP  13. GiftCardServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 10:57:25 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 10:57:25 America/New_York] PHP  15. GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 10:57:25 America/New_York] PHP  16. GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 10:57:25 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 10:57:25 America/New_York] PHP  18. GiftCardServiceTest->testSaveGiftCardCode() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 10:57:25 America/New_York] PHP  19. craft\services\Elements->saveElement($element = *uninitialized*, $runValidation = *uninitialized*, $propagate = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/GiftCardServiceTest.php:36
+[14-Feb-2019 13:47:24 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 13:47:24 America/New_York] PHP Stack trace:
+[14-Feb-2019 13:47:24 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 13:47:24 America/New_York] PHP   2. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 13:47:24 America/New_York] PHP   3. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 13:47:24 America/New_York] PHP   4. Codeception\Application->doRun() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 13:47:24 America/New_York] PHP   5. Codeception\Application->doRunCommand() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 13:47:24 America/New_York] PHP   6. Codeception\Command\Run->run() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 13:47:24 America/New_York] PHP   7. Codeception\Command\Run->execute() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 13:47:24 America/New_York] PHP   8. Codeception\Codecept->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[14-Feb-2019 13:47:24 America/New_York] PHP   9. Codeception\Codecept->runSuite() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 13:47:24 America/New_York] PHP  10. Codeception\SuiteManager->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 13:47:24 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 13:47:24 America/New_York] PHP  12. Codeception\Suite->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 13:47:24 America/New_York] PHP  13. union\test\GiftCardServiceTest->run() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 13:47:24 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 13:47:24 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 13:47:24 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 13:47:24 America/New_York] PHP  17. ReflectionMethod->invokeArgs() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 13:47:24 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 13:47:24 America/New_York] PHP  19. union\giftcards\services\GiftCardService->importCsv() /Users/abryrath/Union/Sites/autobell-com/tests/unit/GiftCardServiceTest.php:50
+[14-Feb-2019 13:56:29 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 13:56:29 America/New_York] PHP Stack trace:
+[14-Feb-2019 13:56:29 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 13:56:29 America/New_York] PHP   2. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 13:56:29 America/New_York] PHP   3. Codeception\Application->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 13:56:29 America/New_York] PHP   4. Codeception\Application->doRun() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 13:56:29 America/New_York] PHP   5. Codeception\Application->doRunCommand() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 13:56:29 America/New_York] PHP   6. Codeception\Command\Run->run() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 13:56:29 America/New_York] PHP   7. Codeception\Command\Run->execute() /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 13:56:29 America/New_York] PHP   8. Codeception\Codecept->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[14-Feb-2019 13:56:29 America/New_York] PHP   9. Codeception\Codecept->runSuite() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 13:56:29 America/New_York] PHP  10. Codeception\SuiteManager->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 13:56:29 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 13:56:29 America/New_York] PHP  12. Codeception\Suite->run() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 13:56:29 America/New_York] PHP  13. union\test\GiftCardServiceTest->run() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 13:56:29 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 13:56:29 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 13:56:29 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 13:56:29 America/New_York] PHP  17. ReflectionMethod->invokeArgs() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 13:56:29 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 13:56:29 America/New_York] PHP  19. union\giftcards\services\GiftCardService->importCsv() /Users/abryrath/Union/Sites/autobell-com/tests/unit/GiftCardServiceTest.php:50
+[14-Feb-2019 14:36:12 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 14:36:12 America/New_York] PHP Stack trace:
+[14-Feb-2019 14:36:12 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 14:36:12 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 14:36:12 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 14:36:12 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 14:36:12 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 14:36:12 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 14:36:12 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 14:36:12 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[14-Feb-2019 14:36:12 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 14:36:12 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 14:36:12 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 14:36:12 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 14:36:12 America/New_York] PHP  13. union\test\GiftCardServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 14:36:12 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 14:36:12 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 14:36:12 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 14:36:12 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 14:36:12 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 14:36:12 America/New_York] PHP  19. union\giftcards\services\GiftCardService->importCsv($filePath = *uninitialized*, $hasHeader = *uninitialized*, $delim = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/GiftCardServiceTest.php:50
+[14-Feb-2019 14:40:18 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[14-Feb-2019 14:40:18 America/New_York] PHP Stack trace:
+[14-Feb-2019 14:40:18 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[14-Feb-2019 14:40:18 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[14-Feb-2019 14:40:18 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[14-Feb-2019 14:40:18 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[14-Feb-2019 14:40:18 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[14-Feb-2019 14:40:18 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[14-Feb-2019 14:40:18 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[14-Feb-2019 14:40:18 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[14-Feb-2019 14:40:18 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[14-Feb-2019 14:40:18 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[14-Feb-2019 14:40:18 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[14-Feb-2019 14:40:18 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[14-Feb-2019 14:40:18 America/New_York] PHP  13. union\test\GiftCardServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[14-Feb-2019 14:40:18 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[14-Feb-2019 14:40:18 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[14-Feb-2019 14:40:18 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[14-Feb-2019 14:40:18 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 14:40:18 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[14-Feb-2019 14:40:18 America/New_York] PHP  19. union\giftcards\services\GiftCardService->importCsv($filePath = *uninitialized*, $hasHeader = *uninitialized*, $delim = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/GiftCardServiceTest.php:50
+[15-Feb-2019 08:07:23 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 08:07:23 America/New_York] PHP Stack trace:
+[15-Feb-2019 08:07:23 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 08:07:23 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 08:07:23 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 08:07:23 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 08:07:23 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 08:07:23 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 08:07:23 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 08:07:23 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 08:07:23 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 08:07:23 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 08:07:23 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 08:07:23 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 08:07:23 America/New_York] PHP  13. union\test\GiftCardServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 08:07:23 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 08:07:23 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 08:07:23 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 08:07:23 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 08:07:23 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 08:09:59 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 08:09:59 America/New_York] PHP Stack trace:
+[15-Feb-2019 08:09:59 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 08:09:59 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 08:09:59 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 08:09:59 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 08:09:59 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 08:09:59 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 08:09:59 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 08:09:59 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 08:09:59 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 08:09:59 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 08:09:59 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 08:09:59 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 08:09:59 America/New_York] PHP  13. union\test\GiftCardServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 08:09:59 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 08:09:59 America/New_York] PHP  15. union\test\GiftCardServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 08:09:59 America/New_York] PHP  16. union\test\GiftCardServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 08:09:59 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 08:09:59 America/New_York] PHP  18. union\test\GiftCardServiceTest->testCsvImport() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:11:40 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:11:40 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:11:40 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:11:40 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:11:40 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:11:40 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:11:40 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:11:40 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:11:40 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:11:40 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:11:40 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:11:40 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:11:40 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:11:40 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:11:40 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:11:40 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:11:40 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:11:40 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 09:11:40 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:11:40 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:11:40 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:32
+[15-Feb-2019 09:15:26 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:15:26 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:15:26 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:15:26 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:15:26 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:15:26 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:15:26 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:15:26 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:15:26 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:15:26 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:15:26 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:15:26 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:15:26 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:15:26 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:15:26 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:15:26 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:15:26 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:15:26 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 09:15:26 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:15:26 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:15:26 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:32
+[15-Feb-2019 09:17:41 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:17:41 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:17:41 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:17:41 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:17:41 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:17:41 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:17:41 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:17:41 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:17:41 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:17:41 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:17:41 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:17:41 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:17:41 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:17:41 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:17:41 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:17:41 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:17:41 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:17:41 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 09:17:41 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:17:41 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:17:41 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:32
+[15-Feb-2019 09:19:00 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:19:00 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:19:00 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:19:00 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:19:00 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:19:00 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:19:00 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:19:00 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:19:00 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:19:00 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:19:00 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:19:00 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:19:00 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:19:00 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:19:00 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:19:00 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:19:00 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:19:00 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 09:19:00 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:19:00 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 09:19:00 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:32
+[15-Feb-2019 09:50:46 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:50:46 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:50:46 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:50:46 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:50:46 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:50:46 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:50:46 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:50:46 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:50:46 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:50:46 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:50:46 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:50:46 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:50:46 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:50:46 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:50:46 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:50:46 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:50:46 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:50:46 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 09:50:46 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 09:55:36 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 09:55:36 America/New_York] PHP Stack trace:
+[15-Feb-2019 09:55:36 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 09:55:36 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 09:55:36 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 09:55:36 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 09:55:36 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 09:55:36 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 09:55:36 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 09:55:36 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 09:55:36 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 09:55:36 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 09:55:36 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 09:55:36 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 09:55:36 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 09:55:36 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 09:55:36 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 09:55:36 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 09:55:36 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 10:02:57 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 10:02:57 America/New_York] PHP Stack trace:
+[15-Feb-2019 10:02:57 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 10:02:57 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 10:02:57 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 10:02:57 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 10:02:57 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 10:02:57 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 10:02:57 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 10:02:57 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 10:02:57 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 10:02:57 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 10:02:57 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 10:02:57 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 10:02:57 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 10:02:57 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 10:02:57 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 10:02:57 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 10:02:57 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 10:05:12 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 10:05:12 America/New_York] PHP Stack trace:
+[15-Feb-2019 10:05:12 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 10:05:12 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 10:05:12 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 10:05:12 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 10:05:12 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 10:05:12 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 10:05:12 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 10:05:12 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 10:05:12 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 10:05:12 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 10:05:12 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 10:05:12 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 10:05:12 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 10:05:12 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 10:05:12 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 10:05:12 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 10:05:12 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 10:06:20 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 10:06:20 America/New_York] PHP Stack trace:
+[15-Feb-2019 10:06:20 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 10:06:20 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 10:06:20 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 10:06:20 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 10:06:20 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 10:06:20 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 10:06:20 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 10:06:20 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 10:06:20 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 10:06:20 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 10:06:20 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 10:06:20 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 10:06:20 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 10:06:20 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 10:06:20 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 10:06:20 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 10:06:20 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 10:43:21 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 10:43:21 America/New_York] PHP Stack trace:
+[15-Feb-2019 10:43:21 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 10:43:21 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 10:43:21 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 10:43:21 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 10:43:21 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 10:43:21 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 10:43:21 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 10:43:21 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 10:43:21 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 10:43:21 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 10:43:21 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 10:43:21 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 10:43:21 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 10:43:21 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 10:43:21 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 10:43:21 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 10:43:21 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 10:59:11 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 10:59:11 America/New_York] PHP Stack trace:
+[15-Feb-2019 10:59:11 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 10:59:11 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 10:59:11 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 10:59:11 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 10:59:11 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 10:59:11 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 10:59:11 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 10:59:11 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 10:59:11 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 10:59:11 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 10:59:11 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 10:59:11 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 10:59:11 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 10:59:11 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 10:59:11 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 10:59:11 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 10:59:11 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 10:59:11 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 10:59:11 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:138
+[15-Feb-2019 11:05:16 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 11:05:16 America/New_York] PHP Stack trace:
+[15-Feb-2019 11:05:16 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 11:05:16 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 11:05:16 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 11:05:16 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 11:05:16 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 11:05:16 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 11:05:16 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 11:05:16 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 11:05:16 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 11:05:16 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 11:05:16 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 11:05:16 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 11:05:16 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 11:05:16 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 11:05:16 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 11:05:16 America/New_York] PHP  16. union\test\PriceServiceTest->setUp() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:935
+[15-Feb-2019 11:05:16 America/New_York] PHP  17. union\test\PriceServiceTest->_before() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Test/Unit.php:57
+[15-Feb-2019 11:05:16 America/New_York] PHP  18. union\test\PriceServiceTest->saveCharlotteTestLocation() /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:118
+[15-Feb-2019 11:08:18 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 11:08:18 America/New_York] PHP Stack trace:
+[15-Feb-2019 11:08:18 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 11:08:18 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 11:08:18 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 11:08:18 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 11:08:18 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 11:08:18 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 11:08:18 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 11:08:18 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 11:08:18 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 11:08:18 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 11:08:18 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 11:08:18 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 11:08:18 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 11:08:18 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 11:08:18 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 11:08:18 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 11:08:18 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:08:18 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:09:35 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 11:09:35 America/New_York] PHP Stack trace:
+[15-Feb-2019 11:09:35 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 11:09:35 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 11:09:35 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 11:09:35 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 11:09:35 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 11:09:35 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 11:09:35 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 11:09:35 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 11:09:35 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 11:09:35 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 11:09:35 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 11:09:35 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 11:09:35 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 11:09:35 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 11:09:35 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 11:09:35 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 11:09:35 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:09:35 America/New_York] PHP  18. union\test\PriceServiceTest->testGetServicePriceForLocation() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:09:35 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:140
+[15-Feb-2019 11:22:38 America/New_York] PHP Fatal error:  Uncaught RuntimeException: Command Did Not Finish Properly in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php:101
+Stack trace:
+#0 [internal function]: Codeception\Subscriber\ErrorHandler->shutdownHandler()
+#1 {main}
+  thrown in /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Subscriber/ErrorHandler.php on line 101
+[15-Feb-2019 11:22:38 America/New_York] PHP Stack trace:
+[15-Feb-2019 11:22:38 America/New_York] PHP   1. {main}() /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:0
+[15-Feb-2019 11:22:38 America/New_York] PHP   2. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/codecept:43
+[15-Feb-2019 11:22:38 America/New_York] PHP   3. Codeception\Application->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Application.php:108
+[15-Feb-2019 11:22:38 America/New_York] PHP   4. Codeception\Application->doRun($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:145
+[15-Feb-2019 11:22:38 America/New_York] PHP   5. Codeception\Application->doRunCommand($command = *uninitialized*, $input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:262
+[15-Feb-2019 11:22:38 America/New_York] PHP   6. Codeception\Command\Run->run($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Application.php:901
+[15-Feb-2019 11:22:38 America/New_York] PHP   7. Codeception\Command\Run->execute($input = *uninitialized*, $output = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/symfony/console/Command/Command.php:255
+[15-Feb-2019 11:22:38 America/New_York] PHP   8. Codeception\Codecept->run($suite = *uninitialized*, $test = *uninitialized*, $config = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Command/Run.php:384
+[15-Feb-2019 11:22:38 America/New_York] PHP   9. Codeception\Codecept->runSuite($settings = *uninitialized*, $suite = *uninitialized*, $test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:159
+[15-Feb-2019 11:22:38 America/New_York] PHP  10. Codeception\SuiteManager->run($runner = *uninitialized*, $result = *uninitialized*, $options = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/Codecept.php:192
+[15-Feb-2019 11:22:38 America/New_York] PHP  11. Codeception\PHPUnit\Runner->doEnhancedRun($suite = *uninitialized*, $result = *uninitialized*, $arguments = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/codeception/src/Codeception/SuiteManager.php:158
+[15-Feb-2019 11:22:38 America/New_York] PHP  12. Codeception\Suite->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/codeception/phpunit-wrapper/src/Runner.php:110
+[15-Feb-2019 11:22:38 America/New_York] PHP  13. union\test\PriceServiceTest->run($result = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestSuite.php:755
+[15-Feb-2019 11:22:38 America/New_York] PHP  14. PHPUnit\Framework\TestResult->run($test = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:894
+[15-Feb-2019 11:22:38 America/New_York] PHP  15. union\test\PriceServiceTest->runBare() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestResult.php:698
+[15-Feb-2019 11:22:38 America/New_York] PHP  16. union\test\PriceServiceTest->runTest() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:939
+[15-Feb-2019 11:22:38 America/New_York] PHP  17. ReflectionMethod->invokeArgs(*uninitialized*, *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:22:38 America/New_York] PHP  18. union\test\PriceServiceTest->testDefaultPriceIfNotExplicitlySet() /Users/abryrath/Union/Sites/autobell-com/vendor/phpunit/phpunit/src/Framework/TestCase.php:1071
+[15-Feb-2019 11:22:38 America/New_York] PHP  19. union\app\services\PriceService->getServicePriceForLocation($locationId = *uninitialized*, $serviceId = *uninitialized*) /Users/abryrath/Union/Sites/autobell-com/tests/unit/PriceServiceTest.php:175
+[22-Apr-2019 12:48:22 UTC] PHP Warning:  require(/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /var/www/tests/_bootstrap.php on line 52
+[22-Apr-2019 12:48:22 UTC] PHP Fatal error:  require(): Failed opening required '/yiisoft/yii2/Yii.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_bootstrap.php on line 52
+[22-Apr-2019 12:48:53 UTC] PHP Warning:  require(/var/www/../vendor/craftcms/cms/src/Craft.php): failed to open stream: No such file or directory in /var/www/tests/_bootstrap.php on line 53
+[22-Apr-2019 12:48:53 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/../vendor/craftcms/cms/src/Craft.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_bootstrap.php on line 53
+[22-Apr-2019 12:52:05 UTC] PHP Warning:  require(/var/www/tests/vendor/craftcms/cms/src/config/app.php): failed to open stream: No such file or directory in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:52:05 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/tests/vendor/craftcms/cms/src/config/app.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:53:46 UTC] PHP Warning:  require(/var/www/tests/_craft/vendor/craftcms/cms/src/config/app.php): failed to open stream: No such file or directory in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:53:46 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/tests/_craft/vendor/craftcms/cms/src/config/app.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:54:20 UTC] PHP Warning:  require(/var/www/tests/_craft/config/../vendor/craftcms/cms/src/config/app.php): failed to open stream: No such file or directory in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:54:20 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/tests/_craft/config/../vendor/craftcms/cms/src/config/app.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_craft/config/test.php on line 26
+[22-Apr-2019 12:54:49 UTC] PHP Warning:  require(/var/www/tests/_craft/config/../../vendor/craftcms/cms/src/config/app.php): failed to open stream: No such file or directory in /var/www/tests/_craft/config/test.php on line 27
+[22-Apr-2019 12:54:49 UTC] PHP Fatal error:  require(): Failed opening required '/var/www/tests/_craft/config/../../vendor/craftcms/cms/src/config/app.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_craft/config/test.php on line 27
+[22-Apr-2019 12:55:22 UTC] PHP Warning:  require(/var/vendor/craftcms/cms/src/config/app.php): failed to open stream: No such file or directory in /var/www/tests/_craft/config/test.php on line 27
+[22-Apr-2019 12:55:22 UTC] PHP Fatal error:  require(): Failed opening required '/var/vendor/craftcms/cms/src/config/app.php' (include_path='.:/usr/local/lib/php') in /var/www/tests/_craft/config/test.php on line 27

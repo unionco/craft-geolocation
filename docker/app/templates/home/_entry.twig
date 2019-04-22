@@ -1,0 +1,14 @@
+<html>
+<body>
+    {% set geolocationService = geolocation.geolocation %}
+    {{ dump(geolocationService.getProvider()) }}
+    {% set myLocation = geolocationService.getCoords('172.72.23.188') %}
+    {{ dump(myLocation) }}
+
+    {% set randomLocation = geolocationService.getCoords('xxx') %}
+    {{ dump(randomLocation) }}
+
+    {{ dump(geolocation.location.distance(myLocation, randomLocation) )}}
+
+</body>
+</html>
