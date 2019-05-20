@@ -1,5 +1,5 @@
 {
-    "name": "unionco/geolocation",
+    "name": "unionco/craft-geolocation",
     "description": "Geolocation helper for Craft",
     "type": "craft-plugin",
     "keywords": [

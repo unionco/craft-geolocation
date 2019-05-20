@@ -3,7 +3,7 @@
 
 Geolocation helper for Craft
 
-![Screenshot](resources/img/plugin-logo.png)
+<img src="resources/img/plugin-logo.svg" width=200/>
 
 ## Requirements
 
@@ -19,7 +19,7 @@ To install the plugin, follow these instructions.
 
 2. Then tell Composer to load the plugin:
 
-        composer require unionco/geolocation
+        composer require unionco/craft-geolocation
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Geolocation.
 

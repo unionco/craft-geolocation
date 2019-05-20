@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#333333;}
+	.st1{clip-path:url(#SVGID_2_);}
+	.st2{opacity:0.3;}
+	.st3{fill:#676767;}
+	.st4{opacity:0.3;clip-path:url(#SVGID_4_);}
+	.st5{opacity:0.3;clip-path:url(#SVGID_6_);}
+	.st6{fill:#FFFFFF;}
+	.st7{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+	.st8{fill:#FF3366;}
+	.st9{fill-rule:evenodd;clip-rule:evenodd;fill:#FF3366;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-width:4;stroke-miterlimit:10;}
+	.st11{fill-rule:evenodd;clip-rule:evenodd;fill:#666666;}
+	.st12{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st13{fill:none;}
+	.st14{fill:#666666;}
+	.st15{opacity:0.4;fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+</style>
+<g>
+	<g>
+		<path d="M54,60H6c-3.3,0-6-2.7-6-6V6c0-3.3,2.7-6,6-6h48c3.3,0,6,2.7,6,6v48C60,57.3,57.3,60,54,60z"/>
+	</g>
+	<g>
+		<path class="st13" d="M30,20c-5.5,0-10,4.5-10,10s4.5,10,10,10s10-4.5,10-10S35.5,20,30,20z M30,34.5c-2.5,0-4.5-2-4.5-4.5
+			s2-4.5,4.5-4.5s4.5,2,4.5,4.5S32.5,34.5,30,34.5z"/>
+		<circle class="st8" cx="30" cy="30" r="4.5"/>
+		<path class="st6" d="M32,16.2V12h-4v4.2C21.9,17,17,21.9,16.2,28H12v4h4.2C17,38.1,21.9,43,28,43.8V48h4v-4.2
+			C38.1,43,43,38.1,43.8,32H48v-4h-4.2C43,21.9,38.1,17,32,16.2z M30,40c-5.5,0-10-4.5-10-10s4.5-10,10-10s10,4.5,10,10
+			S35.5,40,30,40z"/>
+	</g>
+</g>
+</svg>
