@@ -1,0 +1,16 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.checkboxField({
+    label: 'Show map'|t('app'),
+    name: 'showMap',
+    checked: field.showMap,
+    toggle: 'mapProviderContainer'
+}) }}
+
+<div id="mapProviderContainer" class="nested-fields{% if not field.showMap %} hidden{% endif %}">
+    {{ forms.selectField({
+        label: 'Map Provider',
+        name: 'mapProvider',
+        selected: field.mapProvider
+    }) }}
+</div>

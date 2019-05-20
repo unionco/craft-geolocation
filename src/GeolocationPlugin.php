@@ -13,11 +13,15 @@ namespace unionco\geolocation;
 use Craft;
 use yii\base\Event;
 use craft\base\Plugin;
+use craft\services\Fields;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 use unionco\geolocation\models\Settings;
 use unionco\geolocation\services\Location;
+use craft\events\RegisterComponentTypesEvent;
+use unionco\geolocation\services\Coordinates;
 use unionco\geolocation\services\Geolocation;
+use unionco\geolocation\fields\CoordinatesField;
 use unionco\geolocation\twigextensions\GeolocationTwigExtension;
 
 /**
@@ -34,7 +38,7 @@ class GeolocationPlugin extends Plugin
     // =========================================================================
 
     /**
-     * @var GeolocationPlugin
+ * @var GeolocationPlugin
      */
     public static $plugin;
 
@@ -63,19 +67,17 @@ class GeolocationPlugin extends Plugin
         $this->setComponents([
             'geolocation' => Geolocation::class,
             'location' => Location::class,
+            'coordinates' => Coordinates::class,
         ]);
 
         Event::on(
-            Plugins::class,
-            Plugins::EVENT_AFTER_INSTALL_PLUGIN,
+            Fields::class,
+            Fields::EVENT_REGISTER_FIELD_TYPES,
             /**
-             * @param PluginEvent $event
              * @return void
              */
-            function (PluginEvent $event) {
-                if ($event->plugin === $this) {
-                    // self::$plugin->install->seed();
-                }
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = CoordinatesField::class;
             }
         );
 
@@ -112,5 +114,15 @@ class GeolocationPlugin extends Plugin
                 'settings' => $this->getSettings(),
             ]
         );
+    }
+
+    public static function getInstance(): GeolocationPlugin
+    {
+        return static::$plugin;
+    }
+
+    public function getCoordinates(): Coordinates
+    {
+        return $this->coordinates;
     }
 }
