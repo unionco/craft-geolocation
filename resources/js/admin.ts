@@ -1,4 +1,5 @@
 import ProviderSelect from './components/ProviderSelect';
+import MapBoxMap from './components/MapBoxMap';
 
 class Admin {
     public providerSelect: ProviderSelect;
@@ -8,7 +9,18 @@ class Admin {
         if (providerSelect) {
             this.providerSelect = new ProviderSelect(providerSelect);
         }
+
+        const inputMaps: NodeListOf<HTMLDivElement> = document.querySelectorAll('[data-map-provider]');
+        if (inputMaps && inputMaps.length) {
+            inputMaps.forEach((container: HTMLDivElement) => {
+                if (container.dataset.mapProvider === 'mapbox') {
+                    new MapBoxMap(container);
+                }
+            });
+        }
     }
 }
 
 new Admin();
+
+console.log(document.querySelector('[data-map-provider]'));

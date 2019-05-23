@@ -6,6 +6,7 @@ use Craft;
 use craft\base\Element;
 use craft\base\Component;
 use craft\base\ElementInterface;
+use unionco\geolocation\models\LatLng;
 use craft\elements\db\ElementQueryInterface;
 use unionco\geolocation\fields\CoordinatesField;
 use unionco\geolocation\models\CoordinatesModel;
@@ -116,4 +117,12 @@ class Coordinates extends Component
         return $saveResult;
     }
     
+    public function search(float $lat, float $lng, float $radius)
+    {
+        $latLng = new LatLng($lat, $lng);
+        
+        return CoordinatesRecord::find()
+            ->withDistanceFrom($latLng, $radius)
+            ->all();
+    }
 }

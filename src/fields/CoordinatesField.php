@@ -27,6 +27,9 @@ class CoordinatesField extends Field
     /** @var string $mapProvider */
     public $mapProvider = '';
 
+    /** @var string $apiKey */
+    public $apiKey = '';
+
     public $columnType = Schema::TYPE_TEXT;
 
     /**
@@ -110,8 +113,15 @@ class CoordinatesField extends Field
      */
     public function getInputHtml($value, ElementInterface $element = null): string
     {
+        $view = Craft::$app->getView();
         $debug = $value;
-        return Craft::$app->getView()->renderTemplate(
+        $js = '';
+        if ($this->showMap) {
+            if ($this->mapProvider === 'mapbox') {
+                $view->registerAssetBundle('unionco\\geolocation\\assetbundles\\Geolocation\\GeolocationAdminAsset');
+            }
+        }
+        return $view->renderTemplate(
             'geolocation/fieldtypes/Coordinates/input',
             [
                 'name' => $this->handle,

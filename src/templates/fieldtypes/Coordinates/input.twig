@@ -16,17 +16,40 @@
     rows: field.initialRows
 } %} #}
 
-{{ dump(debug) }}
+{# {{ dump(debug) }} #}
 
-{{ forms.text({
-    id: 'lat',
-    name: name ~ '[lat]',
-    value: lat
-}) }}
+{% if field.showMap %}
+    <div class="CoordField-input" style="width: 100%;" height="200">
+        {% if field.mapProvider == 'mapbox' %}
+            {{ forms.text({
+                id: 'lat',
+                name: name ~ '[lat]',
+                value: lat
+            }) }}
 
-{{ forms.text({
-    id: 'lng',
-    name: name ~ '[lng]',
-    value: lng
-}) }}
+            {{ forms.text({
+                id: 'lng',
+                name: name ~ '[lng]',
+                value: lng
+            }) }}
 
+            <div data-map-provider="mapbox" 
+                data-field-prefix="{{ name }}" 
+                data-map-api-key="{{ parseEnv(field.apiKey) }}"
+                style="height: 500px;">
+            </div>
+        </div>
+    {% endif %}
+{% else %}
+    {{ forms.text({
+        id: 'lat',
+        name: name ~ '[lat]',
+        value: lat
+    }) }}
+
+    {{ forms.text({
+        id: 'lng',
+        name: name ~ '[lng]',
+        value: lng
+    }) }}
+{% endif %}

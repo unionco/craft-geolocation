@@ -11,6 +11,18 @@
     {{ forms.selectField({
         label: 'Map Provider',
         name: 'mapProvider',
-        selected: field.mapProvider
+        selected: field.mapProvider,
+        options: {
+            mapbox: {
+                label: 'MapBox',
+                value: 'mapbox'
+            }
+        }
+    }) }}
+
+    {{ forms.autosuggestField({
+        label: 'API Key',
+        name: 'apiKey',
+        suggestEnvVars: true
     }) }}
 </div>

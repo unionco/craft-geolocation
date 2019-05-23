@@ -5,6 +5,10 @@ namespace unionco\geolocation\models;
 use Craft;
 use DateTime;
 use craft\base\Model;
+use craft\base\Element;
+use craft\elements\Entry;
+use craft\services\Plugins;
+use craft\services\Elements;
 
 class CoordinatesModel extends Model
 {
@@ -25,6 +29,8 @@ class CoordinatesModel extends Model
     
     /** @var float $lng */
     public $lng;
+
+    public $distance = null;
 
     /** @var string $uid */
     public $uid;
