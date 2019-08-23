@@ -30,6 +30,10 @@ class CoordinatesModel extends Model
     /** @var float $lng */
     public $lng;
 
+    /** @var string $geocoderString */
+    public $geocoderString;
+
+    /** @var float $distance */
     public $distance = null;
 
     /** @var string $uid */

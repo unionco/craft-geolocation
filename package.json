@@ -12,6 +12,8 @@
     "@babel/core": "^7.1.2",
     "@babel/plugin-transform-async-to-generator": "^7.4.0",
     "@babel/preset-env": "^7.1.0",
+    "@types/gapi": "^0.0.36",
+    "@types/googlemaps": "^3.36.0",
     "@types/mapbox": "^1.6.39",
     "@types/mapbox-gl": "^0.51.7",
     "babel-loader": "^8.0.4",

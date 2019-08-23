@@ -117,17 +117,18 @@ class CoordinatesField extends Field
         $debug = $value;
         $js = '';
         if ($this->showMap) {
-            if ($this->mapProvider === 'mapbox') {
-                $view->registerAssetBundle('unionco\\geolocation\\assetbundles\\Geolocation\\GeolocationAdminAsset');
-            }
+            // if ($this->mapProvider === 'mapbox') {
+            $view->registerAssetBundle('unionco\\geolocation\\assetbundles\\Geolocation\\GeolocationAdminAsset');
+            // }
         }
         return $view->renderTemplate(
             'geolocation/fieldtypes/Coordinates/input',
             [
                 'name' => $this->handle,
                 'debug' => $debug,
-                'lat' => $value->lat ?? null,
-                'lng' => $value->lng ?? null,
+                'lat' => $value->lat ?? 0,
+                'lng' => $value->lng ?? 0,
+                'geocoderString' => $value->geocoderString ?? null,
                 'field' => $this,
             ]
         );

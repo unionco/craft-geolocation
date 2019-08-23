@@ -4,6 +4,7 @@ namespace unionco\geolocation\services;
 
 use Craft;
 use craft\base\Element;
+use craft\helpers\Json;
 use craft\base\Component;
 use craft\base\ElementInterface;
 use unionco\geolocation\models\LatLng;
@@ -39,6 +40,9 @@ class Coordinates extends Component
         if (!$request->isConsoleRequest
             && $request->isPost
             && $value) {
+            if (is_string($value)) {
+                $value = Json::decode($value);
+            }
             $model = new CoordinatesModel($value);
         } elseif ($record) {
             $model = new CoordinatesModel($record->getAttributes());
@@ -111,7 +115,8 @@ class Coordinates extends Component
 
         $record->lat = $value->lat;
         $record->lng = $value->lng;
-
+        $record->geocoderString = $value->geocoderString;
+        
         $saveResult = $record->save();
 
         return $saveResult;

@@ -25,7 +25,8 @@ class CoordinatesRecord extends ActiveRecord implements Migratable
         return [
             'id' => $migration->primaryKey(),
             'lat' => $migration->double()->notNull(),
-            'lng' => $migration->double()->notNUll(),
+            'lng' => $migration->double()->notNull(),
+            'geocoderString' => $migration->string(),
             // Craft Stuff
             'ownerId' => $migration->integer()->notNull(),
             'ownerSiteId' => $migration->integer()->notNull(),

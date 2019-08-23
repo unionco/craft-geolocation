@@ -1,23 +1,15 @@
 import mapboxgl, { Map, MapMouseEvent } from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import AbstractMap from './AbstractMap';
 
 import 'mapbox-gl/src/css/mapbox-gl.css';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
-class MapBoxMap {
-    private apiKey: string;
-    private container: HTMLDivElement;
+class MapBoxMap extends AbstractMap {
     public map: Map;
-    private prefix: string;
-    private latInput: HTMLInputElement;
-    private lngInput: HTMLInputElement;
 
     constructor(container: HTMLDivElement) {
-        this.container = container;
-        this.apiKey = container.dataset.mapApiKey;
-        this.prefix = container.dataset.fieldPrefix;
-        const parentElement = container.parentElement;
-        this.latInput = parentElement.querySelector('input[name*="lat"]');
-        this.lngInput = parentElement.querySelector('input[name*="lng"]');
+        super(container);
         
         // Binding
         this.initMap = this.initMap.bind(this);
@@ -27,7 +19,7 @@ class MapBoxMap {
         console.log(this);
     }
 
-    public initMap() {
+    public initMap(): void {
         let latValue = 0;
         let lngValue = 0;
         if (this.latInput) {
@@ -56,7 +48,7 @@ class MapBoxMap {
         this.initGeocoder();
     }
 
-    public initGeocoder() {
+    public initGeocoder(): void {
         const geocoder = new MapboxGeocoder({
             accessToken: this.apiKey,
             marker: {
@@ -65,8 +57,25 @@ class MapBoxMap {
             mapboxgl: mapboxgl,
             origin: 'https://api.mapbox.com'
         });
+        // console.log(this.container);
+        // return;
+        geocoder.on('result', (event: any) => {
+            console.log(event);
+            this.geocoderStringInput.value = event.result.place_name;
 
-        this.map.addControl(geocoder);
+            const [lng, lat] = event.result.geometry.coordinates;
+            this.latInput.value = lat;
+            this.lngInput.value = lng;
+        });
+
+        this.container.parentNode.querySelector('.geocoder').appendChild(geocoder.onAdd(this.map));
+
+        console.log(this.geocoderStringInput.value);
+        geocoder.query(this.geocoderStringInput.value);
+        // geocoder.
+
+        // console.log(geocoder.getInput());
+        // this.map.addControl(geocoder);
     }
 }
 

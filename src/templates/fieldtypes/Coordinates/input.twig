@@ -21,25 +21,45 @@
 {% if field.showMap %}
     <div class="CoordField-input" style="width: 100%;" height="200">
         {% if field.mapProvider == 'mapbox' %}
-            {{ forms.text({
-                id: 'lat',
-                name: name ~ '[lat]',
-                value: lat
-            }) }}
+            <style>
+            .geocoder {
+                position:absolute;
+                z-index:1;
+                width:50%;
+                left:50%;
+                margin-left:-25%;
+                top:20px;
+            }
+            {# .geocoder > div > svg {
+                display: none;
+            } #}
+            .mapboxgl-ctrl-geocoder { min-width:100%; }
+            </style>
+            <input type="hidden" name="{{ name ~ '[lat]' }}" value="{{ lat }}"/>
+            <input type="hidden" name="{{ name ~ '[lng]' }}" value="{{ lng }}"/>
+            <input type="hidden" name="{{ name ~ '[geocoderString]' }}" value="{{ geocoderString }}">
 
-            {{ forms.text({
-                id: 'lng',
-                name: name ~ '[lng]',
-                value: lng
-            }) }}
-
+            <div class="geocoder"></div>
             <div data-map-provider="mapbox" 
                 data-field-prefix="{{ name }}" 
                 data-map-api-key="{{ parseEnv(field.apiKey) }}"
                 style="height: 500px;">
             </div>
-        </div>
-    {% endif %}
+    
+        {% elseif field.mapProvider == 'google' %}
+            <input type="hidden" name="{{ name ~ '[lat]' }}" value="{{ lat }}"/>
+            <input type="hidden" name="{{ name ~ '[lng]' }}" value="{{ lng }}"/>
+            <input type="hidden" name="{{ name ~ '[geocoderString]' }}" value="{{ geocoderString }}"/>
+            {# {{ forms.text({
+                name: 'autocomplete',
+                class: 'autocomplete'
+            })}} #}
+            <div data-map-provider="google"
+                data-field-prefix="{{ name }}"
+                data-map-api-key="{{ parseEnv(field.apiKey) }}"
+                style="height: 500px;"></div>
+        {% endif %}
+    </div>
 {% else %}
     {{ forms.text({
         id: 'lat',
