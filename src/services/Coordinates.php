@@ -43,7 +43,11 @@ class Coordinates extends Component
             if (is_string($value)) {
                 $value = Json::decode($value);
             }
-            $model = new CoordinatesModel($value);
+            if ($value instanceof CoordinatesModel) {
+                $model = $value;
+            } else {
+                $model = new CoordinatesModel($value);
+            }
         } elseif ($record) {
             $model = new CoordinatesModel($record->getAttributes());
         } else {
@@ -115,7 +119,6 @@ class Coordinates extends Component
 
         $record->lat = $value->lat;
         $record->lng = $value->lng;
-        $record->geocoderString = $value->geocoderString;
         
         $saveResult = $record->save();
 
@@ -130,4 +133,6 @@ class Coordinates extends Component
             ->withDistanceFrom($latLng, $radius)
             ->all();
     }
+
+
 }

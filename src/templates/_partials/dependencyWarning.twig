@@ -1,0 +1,18 @@
+{% set deps = geolocation.dependencyCheck() %}
+
+<strong>debug</strong>
+{% if deps.simplemap is defined %}
+    {% if deps.simplemap.craft is defined %}
+        {% if deps.simplemap.craft %} 
+            <p>ether\simplemap is installed</p>
+        {% else %}
+            {% if deps.simplemap.composer is defined %}
+                {% if deps.simplemap.composer %}
+                    <p>ether\simplemap is installed via composer, but not installed in craft</p>
+                {% else %}
+                    <p>ether\simplemap is not installed</p>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endif %}

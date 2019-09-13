@@ -45,16 +45,8 @@ abstract class AbstractProvider implements GeolocationProvider
             return $ipAddress;
         }
         $ip = Craft::$app->request->getRemoteIp();
-        if ($ip == '127.0.0.1') {
-            return $this->defaultIpAddress();
-        }
 
         return $ip;
-    }
-
-    protected function defaultIpAddress(): string
-    {
-        return '173.95.57.226';
     }
 
     /**
@@ -64,7 +56,7 @@ abstract class AbstractProvider implements GeolocationProvider
     {
         if (strpos($envVar, '$') === 0) {
             $name = substr($envVar, 1);
-            $value = env($name, null);
+            $value = getenv($name, null);
             
             if ($value !== null) {
                 return $value;
@@ -77,9 +69,12 @@ abstract class AbstractProvider implements GeolocationProvider
     /**
      * @inheritdoc
      */
-    public function getCoords($ipAddress = null): LatLng
+    public function getCoords($ipAddress = null, $overrides = []): LatLng
     {
         $ip = $this->getIpAddress($ipAddress);
+        if (key_exists($ip, $overrides)) {
+            return $overrides[$ip];
+        }
         $apiResponse = $this->getRequest($ip);
         $responseBody = $apiResponse
             ->getBody()

@@ -13,6 +13,35 @@
  */
 #}
 
+{% import "_includes/forms" as forms %}
+
 {% do view.registerAssetBundle("unionco\\geolocation\\assetbundles\\geolocation\\GeolocationAdminAsset") %}
 
+{% include "geolocation/_partials/dependencyWarning" %}
+
 {% include "geolocation/_components/providerSelect" %}
+
+{{ forms.editableTableField({
+    label: 'IP Override',
+    instructions: 'Override the coordinates for specific IP addresses. Useful for setting a location for 127.0.0.1 during development. To set this programmaticaly, check out <a href="#">the docs</a> to set this programatically.',
+    id: 'ipOverride',
+    name: 'ipOverride',
+    cols: [
+        {
+            type: 'heading',
+            heading: 'IP',
+            type: 'singleline',
+        },
+        {
+            type: 'heading',
+            heading: 'Latitude',
+            type: 'singleline',
+         },
+         {
+             type: 'heading',
+             heading: 'Longitude',
+             type: 'singleline',
+         },
+        ],
+        rows: settings.ipOverride ?? []
+}) }}

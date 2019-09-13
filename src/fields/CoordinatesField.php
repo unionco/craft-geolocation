@@ -35,9 +35,9 @@ class CoordinatesField extends Field
     /**
      * @inheritdoc
      */
-    public function __construct(array $config = [])
+    public function init()
     {
-        parent::__construct($config);
+        parent::init();
     }
 
     /**
@@ -45,12 +45,7 @@ class CoordinatesField extends Field
      */
     public function getSettingsHtml()
     {
-        return Craft::$app->getView()->renderTemplate(
-            'geolocation/fieldtypes/Coordinates/settings',
-            [
-                'field' => $this,
-            ]
-        );
+        return '';
     }
 
     /**
@@ -125,10 +120,10 @@ class CoordinatesField extends Field
             'geolocation/fieldtypes/Coordinates/input',
             [
                 'name' => $this->handle,
-                'debug' => $debug,
+                // 'debug' => $debug,
                 'lat' => $value->lat ?? 0,
                 'lng' => $value->lng ?? 0,
-                'geocoderString' => $value->geocoderString ?? null,
+                // 'geocoderString' => $value->geocoderString ?? null,
                 'field' => $this,
             ]
         );

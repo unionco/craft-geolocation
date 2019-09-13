@@ -62,13 +62,15 @@ class GeolocationPlugin extends Plugin
         parent::init();
         self::$plugin = $this;
 
-        Craft::$app->view->registerTwigExtension(new GeolocationTwigExtension());
-
         $this->setComponents([
             'geolocation' => Geolocation::class,
             'location' => Location::class,
             'coordinates' => Coordinates::class,
         ]);
+
+
+        Craft::$app->view->registerTwigExtension(new GeolocationTwigExtension());
+
 
         Event::on(
             Fields::class,
@@ -108,10 +110,16 @@ class GeolocationPlugin extends Plugin
      */
     protected function settingsHtml(): string
     {
+        $settings = $this->getSettings();
+        if (!$settings->ipOverride) {
+            $settings->ipOverride = [
+                'row1' => [],
+            ];
+        }
         return Craft::$app->view->renderTemplate(
             'geolocation/settings',
             [
-                'settings' => $this->getSettings(),
+                'settings' => $settings,
             ]
         );
     }

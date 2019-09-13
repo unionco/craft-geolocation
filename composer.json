@@ -41,6 +41,9 @@
     "require-dev": {
         "codeception/codeception": "^2.5",
         "squizlabs/php_codesniffer": "^3.4",
-        "vimeo/psalm": "^3.2"
+        "vimeo/psalm": "^3.4"
+    },
+    "suggest": {
+        "ether/simplemap": "Use simplemap for location fields"
     }
 }

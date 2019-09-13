@@ -15,18 +15,20 @@ class CoordinatesQuery extends ActiveQuery
             ->addSelect('(
                 3959
                     * acos(
-                        cos(radians(:latitude1))
+                        cos(radians(:latitudeOne))
                         * cos(radians(lat))
-                        * cos(radians(lng) - radians(:longitude1))
-                        + sin(radians(:latitude2))
+                        * cos(radians(lng) - radians(:longitude))
+                        + sin(radians(:latitudeTwo))
                         * sin(radians(lat))
                     )
                 ) AS distance
             ')
             ->orderBy('distance asc');
-        $locationQuery->params[':latitude1'] = $latLng->lat;
-        $locationQuery->params[':longitude1'] = $latLng->lng;
-        $locationQuery->params[':latitude2'] = $latLng->lat;
+        $locationQuery->params = [
+            ':latitudeOne' => $latLng->lat,
+            ':longitude' => $latLng->lng,
+            ':latitudeTwo' => $latLng->lat,
+        ];
 
         return $locationQuery;
     }

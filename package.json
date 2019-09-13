@@ -1,12 +1,10 @@
 {
-  "name": "unionclient",
+  "name": "craft-geolocation",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@mapbox/mapbox-gl-geocoder": "^4.3.0",
-    "@union/cli": "^0.9.6",
-    "mapbox-gl": "^1.0.0"
+    "@union/cli": "^0.9.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

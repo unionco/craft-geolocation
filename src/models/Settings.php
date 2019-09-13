@@ -37,6 +37,8 @@ class Settings extends Model
 
     public $providerSettings = [];
 
+    public $ipOverride = [];
+
     // Public Methods
     // =========================================================================
 

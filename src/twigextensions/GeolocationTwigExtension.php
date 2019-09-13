@@ -13,7 +13,7 @@ class GeolocationTwigExtension extends \Twig_Extension
     public function __construct()
     {
         $env = Craft::$app->getView()->getTwig();
-        $env->addGlobal('geolocation', GeolocationPlugin::$plugin);
+        $env->addGlobal('geolocation', GeolocationPlugin::$plugin->geolocation);
         
         // if (Craft::$app->getPlugins()->isPluginInstalled('google-services')) {
         //     $env->addGlobal('unioncoGooglePlaces', UnioncoGooglePlace::locationQuery());

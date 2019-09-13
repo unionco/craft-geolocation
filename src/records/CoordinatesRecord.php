@@ -8,10 +8,9 @@ use craft\base\Element;
 use craft\db\Migration;
 use craft\elements\Entry;
 use craft\db\ActiveRecord;
-use unionco\geolocation\interfaces\Migratable;
 use unionco\geolocation\records\db\CoordinatesQuery;
 
-class CoordinatesRecord extends ActiveRecord implements Migratable
+class CoordinatesRecord extends ActiveRecord
 {
     public $distance = null;
 
@@ -20,29 +19,10 @@ class CoordinatesRecord extends ActiveRecord implements Migratable
         return '{{%geolocation_coordinates}}';
     }
 
-    public static function columns(Migration $migration): array
-    {
-        return [
-            'id' => $migration->primaryKey(),
-            'lat' => $migration->double()->notNull(),
-            'lng' => $migration->double()->notNull(),
-            'geocoderString' => $migration->string(),
-            // Craft Stuff
-            'ownerId' => $migration->integer()->notNull(),
-            'ownerSiteId' => $migration->integer()->notNull(),
-            'fieldId' => $migration->integer()->notNull(),
-            // Yii Stuff
-            'uid' => $migration->uid()->notNull(),
-            'dateCreated' => $migration->dateTime()->notNull(),
-            'dateUpdated' => $migration->dateTime()->notNull(),
-        ];
-    }
-
     public static function find(): CoordinatesQuery
     {
         return new CoordinatesQuery(get_called_class());
     }
-
 
     /**
      * @param string $name
@@ -94,5 +74,14 @@ class CoordinatesRecord extends ActiveRecord implements Migratable
         }
 
         return null;
+    }
+
+
+    public static function getElementIdsInOrder($coords)
+    {
+        return CoordinatesRecord::find()
+            ->withDistanceFrom($coords, 9999999)
+            ->innerJoin('{{%elements}}', '{{%elements}}.id = {{%geolocation_coordinates}}."ownerId"')
+            ->addSelect('{{%elements}}.id elementId');
     }
 }

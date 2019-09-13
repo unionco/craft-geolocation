@@ -9,9 +9,10 @@ interface GeolocationProvider
 {
     /**
      * @param string|null $ipAddress Optional IP address. If blank, the IP is determined by the request headers
+     * @param array{string:LatLng} $overrides List of IP address/Cooardinate pairs to override geolocation provider response
      * @return LatLng
      */
-    public function getCoords($ipAddress = null): LatLng;
+    public function getCoords($ipAddress = null, $overrides = []): LatLng;
 
     /**
      * @param null|string $ipAddress optional IP Address
