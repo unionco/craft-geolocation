@@ -3,13 +3,10 @@
 namespace unionco\geolocation\models;
 
 use craft\helpers\Json;
+use unionco\geolocation\services\Location;
 
 class LatLng
 {
-    const DISTANCE_METERS = 'm';
-    const DISTANCE_KILOMETERS = 'km';
-    const DISTANCE_MILES = 'mi';
-
     /** @var float */
     public $lat = 0;
 
@@ -33,7 +30,7 @@ class LatLng
     public function setLat($lat)
     {
         if (is_numeric($lat)) {
-            $this->lat = (float)$lat;
+            $this->lat = (float) $lat;
         }
     }
 
@@ -44,8 +41,28 @@ class LatLng
     public function setLng($lng)
     {
         if (is_numeric($lng)) {
-            $this->lng = (float)$lng;
+            $this->lng = (float) $lng;
         }
+    }
+
+    /**
+     * Check for equality to another LatLng
+     * @return bool
+     */
+    public function equal(LatLng $latLng)
+    {
+        /** @var float */
+        $epsilon = 0.00001;
+        if (defined('PHP_FLOAT_EPSILON')) {
+            $epsilon = PHP_FLOAT_EPSILON;
+        }
+        $latDelta = abs($this->getLat() - $latLng->getLat());
+        $lngDelta = abs($this->getLng() - $latLng->getLng());
+
+        if ($latDelta < $epsilon && $lngDelta < $epsilon) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -53,14 +70,14 @@ class LatLng
      * @param LatLng $dest
      * @param string{'m','mi','km'} $units units for distance
      */
-    public function distance(LatLng $dest, string $units = self::DISTANCE_MILES)
+    public function distance(LatLng $dest, string $units = Location::DISTANCE_MILES)
     {
         $latFrom = deg2rad($this->lat);
-        $lonFrom = deg2rad($this->lng);
+        $lngFrom = deg2rad($this->lng);
         $latTo = deg2rad($dest->lat);
-        $lonTo = deg2rad($dest->lng);
+        $lngTo = deg2rad($dest->lng);
 
-        $lonDelta = $lonTo - $lonFrom;
+        $lonDelta = $lngTo - $lngFrom;
         $a = pow(cos($latTo) * sin($lonDelta), 2) +
             pow(cos($latFrom) * sin($latTo) - sin($latFrom) * cos($latTo) * cos($lonDelta), 2);
         $b = sin($latFrom) * sin($latTo) + cos($latFrom) * cos($latTo) * cos($lonDelta);
@@ -68,11 +85,11 @@ class LatLng
         $angle = atan2(sqrt($a), $b);
         $meters = $angle * 6371000;
         switch ($units) {
-            case self::DISTANCE_KILOMETERS:
+            case Location::DISTANCE_KILOMETERS:
                 return $meters / 1000;
-            case self::DISTANCE_MILES:
+            case Location::DISTANCE_MILES:
                 return $meters * 0.0006213712;
-            case self::DISTANCE_METERS:
+            case Location::DISTANCE_METERS:
             default:
                 return $meters;
         }

@@ -22,29 +22,13 @@ use ether\simplemap\SimpleMap;
 
 class Geolocation extends Component
 {
-    // Constants
-    // =========================================================================
-
-    /**
-     * @event RegisterProvidersEvent The event that is raised when registering geolocation providers
-     *
-     * ```php
-     * use unionco\geolocation\events\RegisterProvidersEvent;
-     * use unioncp\geolocation\services\Geolocation;
-     * use yii\base\Event;
-     *
-     * Event::on(
-     *      Geolocation::class, Addresses::EVENT_BEFORE_SAVE_ADDRESS, function(AddressEvent $e) {
-     *     // Do something - perhaps let an external CRM system know about a client's new address
-     * });
-     * ```
-     */
+    /** See https://unionco.github.io/craft-plugin-docs/geolocation/#events **/
     const EVENT_REGISTER_PROVIDERS = 'registerProviders';
 
-    /**
-     * Before 
-     */
+    /** See https://unionco.github.io/craft-plugin-docs/geolocation/#events **/
     const EVENT_BEFORE_GEOLOCATION = 'beforeGeolocation';
+
+    /** See https://unionco.github.io/craft-plugin-docs/geolocation/#events **/
     const EVENT_AFTER_GEOLOCATION = 'afterGeolocation';
 
     /**
@@ -109,12 +93,15 @@ class Geolocation extends Component
         $beforeGeolocationEvent = new BeforeGeolocationEvent([
             'ipOverrides' => $ipOverrides,
         ]);
+
+        $this->setOverrideRules($ipOverrides);
+
         $this->trigger(
             self::EVENT_BEFORE_GEOLOCATION,
             $beforeGeolocationEvent
         );
 
-        $this->setOverrideRules($ipOverrides);
+        $this->overrides = $beforeGeolocationEvent->ipOverrides;
 
         /** @var GeolocaitonProvider */
         $provider = $this->getProvider();
@@ -125,140 +112,15 @@ class Geolocation extends Component
         /** Trigger an event so certain responses can be overridden programatically */
         $afterGeolocationEvent = new AfterGeolocationEvent([
             'coords' => $coords,
+            'ipAddress' => $ipAddress,
         ]);
+        
         $this->trigger(
             self::EVENT_AFTER_GEOLOCATION,
             $afterGeolocationEvent
         );
 
         return $coords;
-    }
-
-    public function getNearestByCoords($opts)
-    {
-        if (!key_exists('fieldHandle', $opts)) {
-            throw new \Exception('fieldHandle must be specified');
-        }
-        $fieldHandle = $opts['fieldHandle'];
-
-        /** @var null|LatLng */
-        $coords = null;
-        if (key_exists('coords', $opts)) {
-            $coords = $opts['coords'];
-        } else {
-            $coords = $this->getCoords();
-        }
-
-
-        $limit = null;
-        if (key_exists('limit', $opts)) {
-            $limit = $opts['limit'];
-        }
-
-        $fieldsService = Craft::$app->getFields();
-        $field = $fieldsService->getFieldByHandle($fieldHandle);
-
-        $coordinatesField = false;
-        if ($field instanceof CoordinatesField) {
-            $coordinatesField = true;
-        }
-        // } elseif ($field instanceof '') P
-
-
-        $query = null;
-        if (key_exists('element', $opts)) {
-            switch (strtolower($opts['element'])) {
-                case 'user':
-                    $query = User::find();
-                    break;
-
-                    /** @todo Add more elements */
-                default:
-                    $query = Entry::find();
-                    if (key_exists('section', $opts)) {
-                        $query = $query->section($opts['section']);
-                    }
-                    if (key_exists('type', $opts)) {
-                        $query = $query->type($opts['type']);
-                    }
-                    break;
-            }
-        }
-
-        // Order by
-        if ($coordinatesField) {
-            $elementIds = CoordinatesRecord::getElementIdsInOrder($coords);
-            return $elementIds->all();
-
-            $closest = CoordinatesRecord::find()->withDistanceFrom($coords, 50000)->limit($limit);
-            $closestResult = $closest->all();
-            $ids = array_map(function ($record) {
-                return $record->ownerId;
-            }, $closestResult);
-            $query = $query->andWhere(['in', 'elements.id', $ids]);
-
-            return $query->all();
-        }
-    }
-
-    /**
-     * Get the first Simplemap field for the given element, fallback on Coordinates field
-     * @param \crft\base\Element $element
-     * @return null|string
-     */
-    public function getCoordinatesFieldHandle(\craft\base\Element $element)
-    {
-        $field = null;
-
-        $fieldLayout = $element->getFieldLayout();
-        $fields = $fieldLayout->getFields();
-        $coordinatesField = null;
-
-        foreach ($fields as $fieldCandidate) {
-            if ($fieldCandidate instanceof \ether\simplemap\fields\MapField) {
-                $field = $fieldCandidate;
-                break;
-            } elseif ($fieldCandidate instanceof \unionco\geolocation\fields\CoordinatesField) {
-                $coordinatesField = $fieldCandidate;
-            }
-        }
-        if (!$field && $coordinatesField) {
-            $field = $coordinatesField;
-        }
-        if ($field) {
-            return $field->handle;
-        } else {
-            throw new \Exception('Could not find coordinates property for element');
-        }
-    }
-
-    /**
-     * Return the distance between two elements
-     * @param \craft\base\Element $a first element
-     * @param null|\craft\base\Element $b second element. if left blank, the current geolocation is used
-     * @param null|string $fieldHandle the name of the field used for coordinates (simplemap MapField or geolocation CoordinatesField)
-     * @param null|string $units units for distance
-     */
-    public function distance($a, $b = null, $fieldHandle = null, $units = LatLng::DISTANCE_MILES)
-    {
-        $latLngB = null;
-        if (!$b) {
-            $latLngB = $this->getCoords();
-        } else {
-            if (!$fieldHandle) {
-                $propB = $this->getCoordinatesFieldHandle($b);
-            }
-            $fieldB = $b->{$fieldHandle ?? $propB};
-            $latLngB = new LatLng($fieldB->lat, $fieldB->lng);
-        }
-        if (!$fieldHandle) {
-            $propA = $this->getCoordinatesFieldHandle($a);
-        }
-        $fieldA = $a->{$fieldHandle ?? $propA};
-
-        $latLngA = new LatLng($fieldA->lat, $fieldA->lng);
-
-        return $latLngA->distance($latLngB, $units);
     }
 
     public function getProvider(): GeolocationProvider

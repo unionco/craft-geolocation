@@ -14,6 +14,7 @@ class GeolocationTwigExtension extends \Twig_Extension
     {
         $env = Craft::$app->getView()->getTwig();
         $env->addGlobal('geolocation', GeolocationPlugin::$plugin->geolocation);
+        $env->addGlobal('location', GeolocationPlugin::$plugin->location);
         
         // if (Craft::$app->getPlugins()->isPluginInstalled('google-services')) {
         //     $env->addGlobal('unioncoGooglePlaces', UnioncoGooglePlace::locationQuery());

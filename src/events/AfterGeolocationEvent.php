@@ -11,4 +11,9 @@ class AfterGeolocationEvent extends Event
      * @var LatLng
      */
     public $coords;
+
+    /**
+     * @var string
+     */
+    public $ipAddress;
 }

@@ -72,6 +72,18 @@ abstract class AbstractProvider implements GeolocationProvider
     public function getCoords($ipAddress = null, $overrides = []): LatLng
     {
         $ip = $this->getIpAddress($ipAddress);
+        $matchingOverrides = array_filter(
+            $overrides,
+            function ($override) use ($ip) {
+                return $override[0] === $ip;
+            }
+        );
+
+        if ($matchingOverrides) {
+            $override = array_pop($matchingOverrides);
+            return new LatLng($override[1], $override[2]);
+        }
+
         if (key_exists($ip, $overrides)) {
             return $overrides[$ip];
         }
