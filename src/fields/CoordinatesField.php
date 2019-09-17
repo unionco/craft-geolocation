@@ -121,8 +121,8 @@ class CoordinatesField extends Field
             [
                 'name' => $this->handle,
                 // 'debug' => $debug,
-                'lat' => $value->lat ?? 0,
-                'lng' => $value->lng ?? 0,
+                'lat' => $value->lat,
+                'lng' => $value->lng,
                 // 'geocoderString' => $value->geocoderString ?? null,
                 'field' => $this,
             ]

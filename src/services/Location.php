@@ -2,7 +2,11 @@
 
 namespace unionco\geolocation\services;
 
+use Craft;
 use craft\db\Query;
+use ReflectionClass;
+use ReflectionMethod;
+use yii\db\Expression;
 use craft\base\Component;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\models\ZipLatLng;
@@ -167,65 +171,25 @@ class Location extends Component
         return $latLngA->distance($latLngB, $units);
     }
 
-    /**
-     * @param LatLng|null $center
-     */
-    public function search($center = null, $opts = [])
+    public function searchQuery($center = null, $opts = [])
     {
-        $preFretchElements = $opts['prefetchElements'] ?? false;
+        $siteId = $opts['siteId'] ?? [Craft::$app->getSites()->getCurrentSite()->id];
         $radius = $opts['radius'] ?? null;
-        // $radiusUnits = $opts['radiusUnits'] ?? self::DISTANCE_MILES;
-        $units = $opts['units'] ?? self::DISTANCE_MILES;
-
-        if (!$center) {
-            $center = GeolocationPlugin::getInstance()->geolocation->getCoords();
-        }
-        // $mapsSubQuery = (new Query)//->select('*')
-        //     ->addSelect('(
-        //     3959
-        //         * acos(
-        //             cos(radians(:latitudeOne))
-        //             * cos(radians(maps.lat))
-        //             * cos(radians(maps.lng) - radians(:longitude))
-        //             + sin(radians(:latitudeTwo))
-        //             * sin(radians(maps.lat))
-        //         )
-        //     ) AS maps_distance
-        // ')
-        //     ->from('{{%maps}} maps')
-        //     ->params([
-        //         ':latitudeOne' => $center->lat,
-        //         ':longitude' => $center->lng,
-        //         ':latitudeTwo' => $center->lat,
-        //     ]);
-
-        // $coordsSubQuery = (new Query)
-        //     //->select('*')
-        //     ->addSelect('(
-        //         3959
-        //             * acos(
-        //                 cos(radians(:latitudeOne))
-        //                 * cos(radians(coords.lat))
-        //                 * cos(radians(coords.lng) - radians(:longitude))
-        //                 + sin(radians(:latitudeTwo))
-        //                 * sin(radians(coords.lat))
-        //             )
-        //         ) AS coords_distance
-        //     ')
-        //     ->from('{{%geolocation_coordinates}} coords')
-        //     ->params([
-        //         ':latitudeOne' => $center->lat,
-        //         ':longitude' => $center->lng,
-        //         ':latitudeTwo' => $center->lat,
-        //     ]);
-
-        // $query = (new Query)
-        //     ->select(['mapsDist' => $mapsSubQuery, 'coordsDist' => $coordsSubQuery, 'id'])
-        //     ->from('{{%elements}}');
-
         $query = (new Query)
-        ->select('elements.*')
-        ->addSelect('(
+            ->select([
+                'elements.id as id',
+                'elements.type',
+                'maps.ownerSiteId', // as mapsOwnerSiteId',
+                'maps.lat as mapsLat',
+                'maps.lng as mapsLng',
+                'maps.ownerId as mapsOwnerId',
+                'coords.ownerSiteId', // as coordsOwnerSiteId',
+                // 'CAST(coords.ownerSiteId as VARCHAR(2)) as coordsOwnerSiteId',
+                'coords.lat as coordsLat',
+                'coords.lng as coordsLng',
+                'coords.ownerId as coordsOwnerId',
+            ])
+            ->addSelect('(
                 3959
                     * acos(
                         cos(radians(:latitudeOne))
@@ -234,9 +198,8 @@ class Location extends Component
                         + sin(radians(:latitudeTwo))
                         * sin(radians(maps.lat))
                     )
-                ) AS maps_distance
+               ) AS mapsDistance
             ')
-            // ->from('{{%maps}} maps')
             ->addSelect('(
                         3959
                             * acos(
@@ -246,38 +209,101 @@ class Location extends Component
                                 + sin(radians(:latitudeTwo))
                                 * sin(radians(coords.lat))
                             )
-                        ) AS coords_distance
+                            ) AS coordsDistance
                     ')
-                // ->from('{{%geolocation_coordinates}} coords')
-                ->params([
-                    ':latitudeOne' => $center->lat,
-                    ':longitude' => $center->lng,
-                    ':latitudeTwo' => $center->lat,
-                ])
-               ->from('{{%elements}} elements')
-               ->innerJoin('{{%maps}} maps', 'maps.ownerId = elements.id')
-               ->innerJoin('{{%geolocation_coordinates}} coords', 'coords.ownerId = elements.id');
-        // var_dump($query->getRawSql());
+
+            ->from('{{%elements}} elements')
+            ->where('elements.revisionId is null and elements.draftId is null')
+            ->andWhere('`coords`.`ownerSiteId` in(:siteId)')
+            ->andWhere('`maps`.`ownerSiteId` in(:siteId)')
+            ->innerJoin('{{%maps}} maps', 'maps.ownerId = elements.id')
+            ->innerJoin('{{%geolocation_coordinates}} coords', 'coords.ownerId = elements.id')
+            // ->params()
+            ->orderBy(['LEAST(coalesce(mapsDistance, 9999), coalesce(coordsDistance, 9999))' => SORT_ASC]);
+
+        $params = [
+            ':latitudeOne' => $center->lat,
+            ':longitude' => $center->lng,
+            ':latitudeTwo' => $center->lat,
+            ':siteId' => new Expression(implode(",", $siteId)),
+        ];
+        if ($radius) {
+            $query = $query->andWhere('`mapsDistance` < :radius')
+                ->andWhere('coordsDistance < :radius');
+            $params[':radius'] = $radius;
+        }
+
+        $query = $query->params($params);
+        return $query;
+    }
+
+    /**
+     * @param LatLng|null $center
+     */
+    public function search($center = null, $opts = [])
+    {
+        $prefetchElements = $opts['prefetchElements'] ?? false;
+        $radius = $opts['radius'] ?? null;
+        $units = $opts['units'] ?? self::DISTANCE_MILES;
+
+        if (!$center) {
+            $center = GeolocationPlugin::getInstance()->geolocation->getCoords();
+        }
+
+        $query = $this->searchQuery($center, $opts);
+        if ($opts['rawQuery'] ?? false) {
+            return $query->getRawSql();
+        }
+
         $results = $query->all();
 
-
-        return $results;
-        // var_dump($results);
-        // die;“
+        $elementIds = [];
         $searchResults = array_map(
             /**
              * @param array $result
-             * @return SearchResult
+             * @return SearchResult|null
              */
-            function ($result) {
+            function ($result) use ($prefetchElements, &$elementIds) {
                 $searchResult = new SearchResult;
-                $searchResult->element = $result['ownerId'];
-                $searchResult->distance = $result['maps_distance'];
-                $searchResult->latLng = new LatLng($result['lat'], $result['lng']);
+                $mapsLat = $result['mapsLat'];
+                $mapsLng = $result['mapsLng'];
+                $coordsLat = $result['coordsLat'];
+                $coordsLng = $result['coordsLng'];
+
+                if ($mapsLat !== null && $mapsLng !== null) {
+                    $searchResult->maps = true;
+                    $searchResult->siteId = $result['ownerSiteId'];
+                    $searchResult->distance = $result['mapsDistance'];
+                    $searchResult->latLng = new LatLng($mapsLat, $mapsLng);
+                    $searchResult->element = $result['mapsOwnerId'];
+                    $elementIds[] = $searchResult->element;
+                } elseif ($coordsLat !== "0" && $coordsLng !== "0") {
+                    $searchResult->maps = false;
+                    $searchResult->siteId = $result['ownerSiteId'];
+                    $searchResult->distance = $result['coordsDistance'];
+                    $searchResult->latLng = new LatLng($coordsLat, $coordsLng);
+                    $searchResult->element = $result['coordsOwnerId'];
+                    $elementIds[] = $searchResult->element;
+                } else {
+                    return null;
+                }
+
+                if ($prefetchElements) {
+                    $elementType = $result['type'];
+                    $elementTypeQueryMethod = new ReflectionMethod($elementType, 'find');
+
+                    $query = $elementTypeQueryMethod->invoke(null);
+                    $result = $query->id($searchResult->element)->one();
+                    $searchResult->element = $result ?? $searchResult->element;
+                }
                 return $searchResult;
             },
             $results
         );
+        $searchResults = array_filter($searchResults, function ($result) {
+            return $result;
+        });
+
         return $searchResults;
     }
 }
