@@ -15,6 +15,7 @@ class SearchResult
     /** @var null|LatLng */
     public $latLng;
 
+    
     public $siteId;
 
     public $maps;

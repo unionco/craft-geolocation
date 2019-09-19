@@ -7,6 +7,7 @@ use craft\db\Query;
 use ReflectionClass;
 use ReflectionMethod;
 use yii\db\Expression;
+use craft\base\Element;
 use craft\base\Component;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\models\ZipLatLng;
@@ -155,62 +156,107 @@ class Location extends Component
         if (!$b) {
             $latLngB = GeolocationPlugin::getInstance()->geolocation->getCoords();
         } else {
-            if (!$fieldHandle) {
-                $propB = $this->getCoordinatesFieldHandle($b);
-            }
-            $fieldB = $b->{$fieldHandle ?? $propB};
-            $latLngB = new LatLng($fieldB->lat, $fieldB->lng);
+            // if (!$fieldHandle) {
+            //     $propB = $this->getCoordinatesFieldHandle($b);
+            // }
+            // $fieldB = $b->{$fieldHandle ?? $propB};
+            // $latLngB = new LatLng($fieldB->lat, $fieldB->lng);
+            $latLngB = $this->getCoords($b, $fieldHandle);
         }
-        if (!$fieldHandle) {
-            $propA = $this->getCoordinatesFieldHandle($a);
-        }
-        $fieldA = $a->{$fieldHandle ?? $propA};
+        // if (!$fieldHandle) {
+        //     $propA = $this->getCoordinatesFieldHandle($a);
+        // }
+        // $fieldA = $a->{$fieldHandle ?? $propA};
 
-        $latLngA = new LatLng($fieldA->lat, $fieldA->lng);
+        // $latLngA = new LatLng($fieldA->lat, $fieldA->lng);
+        $latLngA = $this->getCoords($a, $fieldHandle);
 
         return $latLngA->distance($latLngB, $units);
     }
 
-    public function searchQuery($center = null, $opts = [])
+    public function getCoords(\craft\base\Element $element, $fieldHandle = null)
+    {
+        if (!$fieldHandle) {
+            $fieldHandle = $this->getCoordinatesFieldHandle($element);
+        }
+        $coords = new LatLng($element->{$fieldHandle}->lat, $element->{$fieldHandle}->lng);
+        return $coords;
+    }
+
+    /**
+     * Return a query for searching loations
+     * @param LatLng $center
+     * @param array $opts
+     * @return Query
+     */
+    public function searchQuery($center, $opts = [])
     {
         $siteId = $opts['siteId'] ?? [Craft::$app->getSites()->getCurrentSite()->id];
         $radius = $opts['radius'] ?? null;
+        $unitFactor = 3959;
+        switch ($opts['units'] ?? self::DISTANCE_MILES) {
+            case self::DISTANCE_KILOMETERS:
+                $unitFactor *= 1.609344;
+                break;
+            case self::DISTANCE_METERS:
+                $unitFactor = $unitfactor * 1.609344 / 1000;
+                break;
+        }
         $query = (new Query)
             ->select([
-                'elements.id as id',
+                'distinct `elements`.`id` as id',
                 'elements.type',
-                'maps.ownerSiteId', // as mapsOwnerSiteId',
+                'maps.ownerSiteId',
                 'maps.lat as mapsLat',
                 'maps.lng as mapsLng',
                 'maps.ownerId as mapsOwnerId',
-                'coords.ownerSiteId', // as coordsOwnerSiteId',
-                // 'CAST(coords.ownerSiteId as VARCHAR(2)) as coordsOwnerSiteId',
+                'coords.ownerSiteId',
                 'coords.lat as coordsLat',
                 'coords.lng as coordsLng',
                 'coords.ownerId as coordsOwnerId',
+                'mapsDistance',
+                'coordsDistance',
             ])
-            ->addSelect('(
-                3959
-                    * acos(
-                        cos(radians(:latitudeOne))
-                        * cos(radians(maps.lat))
-                        * cos(radians(maps.lng) - radians(:longitude))
-                        + sin(radians(:latitudeTwo))
-                        * sin(radians(maps.lat))
-                    )
-               ) AS mapsDistance
-            ')
-            ->addSelect('(
-                        3959
+            ->leftJoin(
+                [
+                    'mapsSub' => (new Query())
+                        ->select(
+                            [
+                                '(
+                        :unitFactor
                             * acos(
                                 cos(radians(:latitudeOne))
-                                * cos(radians(coords.lat))
-                                * cos(radians(coords.lng) - radians(:longitude))
+                                * cos(radians(mapsSub.lat))
+                                * cos(radians(mapsSub.lng) - radians(:longitude))
                                 + sin(radians(:latitudeTwo))
-                                * sin(radians(coords.lat))
+                                * sin(radians(mapsSub.lat))
                             )
-                            ) AS coordsDistance
-                    ')
+                        ) AS mapsDistance',
+                                'mapsSub.ownerId',
+                            ]
+                        )
+                        ->from('{{%maps}} mapsSub')
+                ],
+                'elements.id = mapsSub.ownerId'
+            )
+            ->leftJoin(
+                ['coordsSub' => (new Query())
+                    ->select([
+                        '(
+                        :unitFactor
+                            * acos(
+                                cos(radians(:latitudeOne))
+                                * cos(radians(coordsSub.lat))
+                                * cos(radians(coordsSub.lng) - radians(:longitude))
+                                + sin(radians(:latitudeTwo))
+                                * sin(radians(coordsSub.lat))
+                            )
+                            ) AS coordsDistance',
+                        'ownerId',
+                    ])
+                    ->from('{{%geolocation_coordinates}} coordsSub')],
+                'elements.id = coordsSub.ownerId'
+            )
 
             ->from('{{%elements}} elements')
             ->where('elements.revisionId is null and elements.draftId is null')
@@ -218,19 +264,19 @@ class Location extends Component
             ->andWhere('`maps`.`ownerSiteId` in(:siteId)')
             ->innerJoin('{{%maps}} maps', 'maps.ownerId = elements.id')
             ->innerJoin('{{%geolocation_coordinates}} coords', 'coords.ownerId = elements.id')
-            // ->params()
             ->orderBy(['LEAST(coalesce(mapsDistance, 9999), coalesce(coordsDistance, 9999))' => SORT_ASC]);
 
         $params = [
+            ':unitFactor' => new Expression("$unitFactor"),
             ':latitudeOne' => $center->lat,
             ':longitude' => $center->lng,
             ':latitudeTwo' => $center->lat,
             ':siteId' => new Expression(implode(",", $siteId)),
         ];
         if ($radius) {
-            $query = $query->andWhere('`mapsDistance` < :radius')
-                ->andWhere('coordsDistance < :radius');
-            $params[':radius'] = $radius;
+            $query = $query->andWhere('(`mapsDistance` < :radius) or (`coordsDistance` < :radius)');
+
+            $params[':radius'] = new Expression("$radius");
         }
 
         $query = $query->params($params);
@@ -238,7 +284,10 @@ class Location extends Component
     }
 
     /**
+     * Search for elements based on their location fields
      * @param LatLng|null $center
+     * @param array $opts
+     * @return Element[]
      */
     public function search($center = null, $opts = [])
     {
