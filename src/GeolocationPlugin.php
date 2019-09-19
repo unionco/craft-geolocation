@@ -11,17 +11,11 @@
 namespace unionco\geolocation;
 
 use Craft;
-use yii\base\Event;
 use craft\base\Plugin;
-use craft\services\Fields;
-use craft\services\Plugins;
-use craft\events\PluginEvent;
 use unionco\geolocation\models\Settings;
 use unionco\geolocation\services\Location;
-use craft\events\RegisterComponentTypesEvent;
 use unionco\geolocation\services\Coordinates;
 use unionco\geolocation\services\Geolocation;
-use unionco\geolocation\fields\CoordinatesField;
 use unionco\geolocation\twigextensions\GeolocationTwigExtension;
 
 /**
@@ -71,17 +65,6 @@ class GeolocationPlugin extends Plugin
 
         Craft::$app->view->registerTwigExtension(new GeolocationTwigExtension());
 
-
-        Event::on(
-            Fields::class,
-            Fields::EVENT_REGISTER_FIELD_TYPES,
-            /**
-             * @return void
-             */
-            function (RegisterComponentTypesEvent $event) {
-                $event->types[] = CoordinatesField::class;
-            }
-        );
 
         Craft::info(
             Craft::t(

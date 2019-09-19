@@ -3,16 +3,10 @@
 namespace unionco\geolocation\services;
 
 use Craft;
-use craft\db\Query;
 use craft\base\Component;
-use craft\elements\Entry;
-use GuzzleHttp\Client as HttpClient;
 use unionco\geolocation\models\LatLng;
 use unionco\geolocation\GeolocationPlugin;
-use unionco\geolocation\fields\CoordinatesField;
 use unionco\geolocation\providers\IPStackProvider;
-use unionco\geolocation\records\CoordinatesRecord;
-use unionco\geolocation\providers\AbstractProvider;
 use unionco\geolocation\events\AfterGeolocationEvent;
 use unionco\geolocation\providers\GoogleMapsProvider;
 use unionco\geolocation\events\BeforeGeolocationEvent;
@@ -114,7 +108,7 @@ class Geolocation extends Component
             'coords' => $coords,
             'ipAddress' => $ipAddress,
         ]);
-        
+
         $this->trigger(
             self::EVENT_AFTER_GEOLOCATION,
             $afterGeolocationEvent
