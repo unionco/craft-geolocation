@@ -8,4 +8,4 @@ Craft 3 plugin providing geolocation and to assist with location-based searching
 
 ## Documentation
 
-View the [docs online](https://unionco.github.io/craft-plugin-docs/craft-geolocation/)
+View the [docs online](https://unionco.github.io/craft-plugin-docs/geolocation/)
