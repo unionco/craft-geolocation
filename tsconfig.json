@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": { "*": ["types/*"] },
-        "outDir": "./src/assetbundles/geolocation/dist/js/",
+        "outDir": "./src/assetbundles/Geolocation/dist/js/",
         "noImplicitAny": true,
         "module": "es6",
         "target": "es5",

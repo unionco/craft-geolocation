@@ -9,7 +9,7 @@ class GeolocationAdminAsset extends AssetBundle
 {
     public function init()
     {
-        $this->sourcePath = "@unionco/geolocation/assetbundles/geolocation/dist";
+        $this->sourcePath = "@unionco/geolocation/assetbundles/Geolocation/dist";
 
         $this->depends = [
             CpAsset::class,

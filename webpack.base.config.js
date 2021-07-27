@@ -105,7 +105,7 @@ module.exports = {
         path.resolve(__dirname, 'resources/scss/admin.scss')
     ],
     output: {
-        path: path.resolve(__dirname, 'src/assetbundles/geolocation/dist'),
+        path: path.resolve(__dirname, 'src/assetbundles/Geolocation/dist'),
         filename: "js/[name].js",
     },
     mode: 'production',
@@ -220,6 +220,6 @@ module.exports = {
     },
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'src/assetbundles/geolocation/dist/js/')
+        path: path.resolve(__dirname, 'src/assetbundles/Geolocation/dist/js/')
     }
 };
